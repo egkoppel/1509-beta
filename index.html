@@ -140,5 +140,32 @@
       });
     });
   </script>
+  <!-- COOKIES!!! -->
+    <button id="snackbar-cookies" class="mdl-button mdl-js-button mdl-button--raised" type="button">Cookie info</button>
+    <div id="snackbar-cookies-div" class="mdl-js-snackbar mdl-snackbar">
+      <div class="mdl-snackbar__text"></div>
+      <button class="mdl-snackbar__action" type="button"></button>
+    </div>
+    <script>
+    (function() {
+      'use strict';
+      var snackbarContainer = document.querySelector('#snackbar-cookies-div');
+      var showSnackbarButton = document.querySelector('#snackbar-cookies');
+      var handler = function(event) {
+        showSnackbarButton.style.backgroundColor = '';
+      };
+      showSnackbarButton.addEventListener('click', function() {
+       'use strict';
+        var data = {
+          message: 'This website needs cookies to continue, its EU law. Have a cookies.',
+          timeout: 2000,
+          actionHandler: handler,
+         actionText: 'OK'
+       };
+       snackbarContainer.MaterialSnackbar.showSnackbar(data);
+       document.getElementById('snackbar-cookies')style.visibility = 'hidden';
+      });
+    }());
+    </script>
   <a href="https://github.com/1509-online/1509-online.github.io" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--white">EDIT</a>
 </html>
