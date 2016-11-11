@@ -180,8 +180,14 @@ body .demo-blog {
       -ms-flex-order: -1;
           order: -1;
 }
-.demo-blog .coffee-pic .mdl-card__media {
+.demo-blog .welcome .mdl-card__media {
   background-image: url('images/founders-court.jpg');
+}
+.demo-blog .amazing .mdl-card__media {
+  background-image: url('images/20161111-trump.jpg');
+}
+.demo-blog .20161111-trump .mdl-card__media {
+  background-image: url('images/20161111-trump.jpg');
 }
 .demo-blog .something-else .mdl-card__media {
   display: -webkit-flex;
@@ -221,10 +227,7 @@ body .demo-blog {
   border-bottom-right-radius: 2px;
 }
 .demo-blog .on-the-road-again .mdl-card__media {
-  background-image: url('images/road.jpg');
-}
-.demo-blog .shopping .mdl-card__media {
-  background-image: url('images/shopping.jpg');
+  background-image: url('images/20161111-trump.jpg');
 }
 .demo-blog .demo-blog__posts > .demo-nav {
   margin: 12px 15px;
@@ -274,10 +277,10 @@ body .demo-blog {
   margin-top: 0.5em;
 }
 .demo-blog .mdl-card h3.quote:before {
-  content: '‚Äú';
+  content: 'ì';
 }
 .demo-blog .mdl-card h3.quote:after {
-  content: '‚Äù';
+  content: 'î';
 }
 .demo-blog--blogpost .custom-header {
   background-color: transparent;
@@ -448,7 +451,7 @@ body .demo-blog {
 .demo-blog .minilogo {
   width: 44px;
   height: 44px;
-  background-image: url('images/avatar.png');
+  background-image: url('images/timothy-langer-circle.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 50%;
