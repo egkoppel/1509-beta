@@ -117,7 +117,7 @@ bodyRef.on('value', function(snapshot) {
   document.getElementById("body").innerHTML = snapshot.val();
 });
 	    var userRef = database.ref('example entry/user');
-bodyRef.on('value', function(snapshot) {
+userRef.on('value', function(snapshot) {
   document.getElementById("user").innerHTML = snapshot.val();
 });
 </script>
