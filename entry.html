@@ -47,7 +47,7 @@
         <div class="demo-blog__posts mdl-grid">
           <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
             <div class="mdl-card__media mdl-color-text--grey-50">
-		    <h3 id="firebase-title">Get title from firebase</h3>
+		    <h3 id="title">title</h3>
             </div>
             <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
               <div class="minilogo"><img src="https://avatars2.githubusercontent.com/u/23385474?v=3&s=460" width="45"></div>
@@ -104,24 +104,24 @@
     </div>
 	      
     <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
-	      <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyChG9cMyAkkZSXCZp1OmfpxbJYnJvh3XnQ",
-    authDomain: "online-eff31.firebaseapp.com",
-    databaseURL: "https://online-eff31.firebaseio.com",
-    storageBucket: "online-eff31.appspot.com",
-    messagingSenderId: "655714895872"
-  };
-  firebase.initializeApp(config);
-	var messagesRef = firebase.database.ref('example entry');
-  // Make sure we remove all previous listeners.
-  messagesRef.off();
-
-  // Loads the last 12 messages and listen for new ones.
-    //var val = data.val();
-	  //var title = val.title;
+	<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyChG9cMyAkkZSXCZp1OmfpxbJYnJvh3XnQ",
+        authDomain: "online-eff31.firebaseapp.com",
+        databaseURL: "https://online-eff31.firebaseio.com",
+        storageBucket: "online-eff31.appspot.com",
+        messagingSenderId: "655714895872"
+      };
+      firebase.initializeApp(config);
+      var database = firebase.database();
+	var entryRef = database.ref('example entry/title');
+entryRef.on('value', function(snapshot) {
+  document.getElementById("title").innerHTML = snapshot.val();
+});
 </script>
   </body>
 </html>
