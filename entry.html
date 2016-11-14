@@ -50,7 +50,7 @@ ref.on("value", function(snapshot) {
         var xRef = new Firebase("https://myApp.firebaseio.com/myList/"+x+"/");
         xRef.once("value", function(xsnapshot) {
             var title = xsnapshot.child("title");
-            document.getElementById('firebase-title').innerHTML = title;
+            //document.getElementById('firebase-title').innerHTML = title;
         });
     }
 }, function (errorObject) {
