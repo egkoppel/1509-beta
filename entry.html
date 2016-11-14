@@ -53,7 +53,7 @@
               <div class="minilogo"><img src="https://avatars2.githubusercontent.com/u/23385474?v=3&s=460" width="45"></div>
               <div>
                 <strong id="user">Getting user...</strong>
-                <span>07/11/16</span>
+                <span id="date">Getting date...</span>
               </div>
               <div class="section-spacer"></div>
             </div>
@@ -119,6 +119,10 @@ bodyRef.on('value', function(snapshot) {
 	    var userRef = database.ref('example entry/user');
 userRef.on('value', function(snapshot) {
   document.getElementById("user").innerHTML = snapshot.val();
+});
+	    var dateRef = database.ref('example entry/date');
+dateRef.on('value', function(snapshot) {
+  document.getElementById("date").innerHTML = snapshot.val();
 });
 </script>
   </body>
