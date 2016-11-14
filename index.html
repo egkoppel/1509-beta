@@ -63,7 +63,7 @@
     <meta name="description" content="The St Pauls Juniors' 1509 magazine is now online!">
   </head>
   <body>
-    <p id="article">article list</p>
+    <p id="article">test stuff</p>
     <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
       <main class="mdl-layout__content">
         <div class="demo-blog__posts mdl-grid">
@@ -388,7 +388,7 @@
 	    userRef.once('value', function(snapshot) {
   snapshot.forEach(function(childSnapshot) {
     var childKey = childSnapshot.key();
-	  children[children.length] = childKey;
+	  children.push(childKey);
     // ...
   });
 });
