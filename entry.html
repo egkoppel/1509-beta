@@ -108,19 +108,19 @@
       };
       firebase.initializeApp(config);
       var database = firebase.database();
-	var titleRef = database.ref('example entry/');
+	var titleRef = database.ref('entries/example entry');
 titleRef.on('value', function(snapshot) {
   document.getElementById("title").innerHTML = snapshot.getKey();
 });
-	    var bodyRef = database.ref('example entry/body');
+	    var bodyRef = database.ref('entries/example entry/body');
 bodyRef.on('value', function(snapshot) {
   document.getElementById("body").innerHTML = snapshot.val();
 });
-	    var userRef = database.ref('example entry/user');
+	    var userRef = database.ref('entries/example entry/user');
 userRef.on('value', function(snapshot) {
   document.getElementById("user").innerHTML = snapshot.val();
 });
-	    var dateRef = database.ref('example entry/date');
+	    var dateRef = database.ref('entries/example entry/date');
 dateRef.on('value', function(snapshot) {
   document.getElementById("date").innerHTML = snapshot.val();
 });
