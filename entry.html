@@ -108,9 +108,9 @@
       };
       firebase.initializeApp(config);
       var database = firebase.database();
-	var titleRef = database.ref('example entry/title');
+	var titleRef = database.ref('example entry/');
 titleRef.on('value', function(snapshot) {
-  document.getElementById("title").innerHTML = snapshot.val();
+  document.getElementById("title").innerHTML = snapshot.getKey();
 });
 	    var bodyRef = database.ref('example entry/body');
 bodyRef.on('value', function(snapshot) {
