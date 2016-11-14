@@ -35,6 +35,23 @@
     <link rel='shortcut icon' href='images/favicon.ico' type='image/x-icon'/ >
   </head>
   <body>
+	  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyChG9cMyAkkZSXCZp1OmfpxbJYnJvh3XnQ",
+    authDomain: "online-eff31.firebaseapp.com",
+    databaseURL: "https://online-eff31.firebaseio.com",
+    storageBucket: "online-eff31.appspot.com",
+    messagingSenderId: "655714895872"
+  };
+  firebase.initializeApp(config);
+  var database = firebase.database();
+		  return firebase.database().ref('/example-entry/').once('value').then(function(snapshot) {
+  var title = snapshot.val().title;
+			  document.getElementById('firebase-title').innerHTML = title;
+});
+		   
+</script>
     <div class="demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
       <main class="mdl-layout__content">
           <div style="position: fixed" class="demo-back">
@@ -45,6 +62,7 @@
         <div class="demo-blog__posts mdl-grid">
           <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
             <div class="mdl-card__media mdl-color-text--grey-50">
+		    <h3 id="firebase-title"></h3>
               <h3>Entry Template</h3>
             </div>
             <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
