@@ -43,20 +43,12 @@
     messagingSenderId: "655714895872"
   };
   firebase.initializeApp(config);
-  var ref = new Firebase("https://online-eff31.firebaseio.com/exampl%20entry");
-
-ref.on("value", function(snapshot) {
-    for (x in snapshot.val()) {
-        var xRef = new Firebase("https://online-eff31.firebaseio.com/exampl%20entry"+x+"/");
-        xRef.once("value", function(xsnapshot) {
-            var title = xsnapshot.child("title");
-		document.getElementById('firebase-title').innerHTML = title;
-            console.log(name);
-        });
-    }
-}, function (errorObject) {
-    console.log("The read failed: " + errorObject.code);
+  var entry = "example entry";
+return firebase.database().ref(entry).once('value').then(function(snapshot) {
+  var title = snapshot.val().title;
+  document.getElementById('firebase-title').innerHTML = title;
 });
+		
 </script>
 		   
 </script>
