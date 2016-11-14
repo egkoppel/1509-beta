@@ -63,7 +63,7 @@
     <meta name="description" content="The St Pauls Juniors' 1509 magazine is now online!">
   </head>
   <body>
-    <p id="article">articles</p>
+    <p id="article">article list</p>
     <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
       <main class="mdl-layout__content">
         <div class="demo-blog__posts mdl-grid">
@@ -383,9 +383,9 @@
       };
       firebase.initializeApp(config);
       var database = firebase.database();
-	var titleRef = database.ref('/');
-titleRef.on('value', function(snapshot) {
-  document.getElementById("article").innerHTML = snapshot.getKey();
+	var Ref = database.ref('/');
+Ref.on('value', function(snapshot) {
+  document.getElementById("article").innerHTML = snapshot.getVal();
 });
 </script>
   </body>
