@@ -383,7 +383,7 @@
       };
       firebase.initializeApp(config);
       var database = firebase.database();
-	    var userRef = database.ref('example entry/user');
+	    var userRef = database.ref('example entry');
 userRef.on('value', function(snapshot) {
   document.getElementById("article").innerHTML = snapshot.val();
 });
