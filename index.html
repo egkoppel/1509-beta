@@ -63,7 +63,7 @@
     <meta name="description" content="The St Pauls Juniors' 1509 magazine is now online!">
   </head>
   <body>
-    <p id="article">Should b 2</p>
+    <p id="article">Should b "example entry"</p>
     <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
       <main class="mdl-layout__content">
         <div class="demo-blog__posts mdl-grid">
@@ -401,14 +401,14 @@ ref.once("value").then(function(snapshot) {
 	//document.getElementById("article").innerHTML = key;
 snapshot.forEach(function(childSnapshot) {
     var childKey = childSnapshot.getKey();
-	children.push(childKey);
+	//children.push(childKey);
 	document.getElementById("article").innerHTML = childKey;
     var childData = childSnapshot.val();
     // ...
   });*/
 	 
 });
-  document.getElementById("article").innerHTML = children.length;
+  //document.getElementById("article").innerHTML = children.length;
 
 </script>
   </body>
