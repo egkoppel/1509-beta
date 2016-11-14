@@ -398,11 +398,13 @@
 var ref = firebase.database().ref("");
 ref.once("value")
 .then(function(snapshot) {
-var stuff = snapshot.child("About").val(); // { first: "Ada", last: "Lovelace"}
-/*var firstName = snapshot.child("name/first").val(); // "Ada"
-var lastName = snapshot.child("name").child("last").val(); // "Lovelace"
-var age = snapshot.child("age").val(); // null*/
-	 document.getElementById("article").innerHTML = stuff;
+snapshot.forEach(function(childSnapshot) {
+    var childKey = childSnapshot.key();
+	document.getElementById("article").innerHTML = childKey;
+    var childData = childSnapshot.val();
+    // ...
+  });
+	 
 });
   //document.getElementById("article").innerHTML = children.length;
 
