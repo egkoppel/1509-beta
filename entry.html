@@ -52,7 +52,7 @@
             <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
               <div class="minilogo"><img src="https://avatars2.githubusercontent.com/u/23385474?v=3&s=460" width="45"></div>
               <div>
-                <strong>SYSTEM</strong>
+                <strong id="user">Getting user...</strong>
                 <span>07/11/16</span>
               </div>
               <div class="section-spacer"></div>
@@ -115,6 +115,10 @@ titleRef.on('value', function(snapshot) {
 	    var bodyRef = database.ref('example entry/body');
 bodyRef.on('value', function(snapshot) {
   document.getElementById("body").innerHTML = snapshot.val();
+});
+	    var userRef = database.ref('example entry/user');
+bodyRef.on('value', function(snapshot) {
+  document.getElementById("user").innerHTML = snapshot.val();
 });
 </script>
   </body>
