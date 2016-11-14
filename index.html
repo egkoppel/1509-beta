@@ -385,11 +385,11 @@
       var database = firebase.database();
 	    var children = [];
 	    var userRef = database.ref('example entry');
-	    userRef.forEach(function(childSnapshot) {
+	    /*userRef.forEach(function(childSnapshot) {
     var childKey = childSnapshot.key();
 		    children[children.length] = childKey;
     // ...
-  });
+  });*/
   document.getElementById("article").innerHTML = children.length;
 
 </script>
