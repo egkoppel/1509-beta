@@ -64,7 +64,7 @@
     <meta name="description" content="The St Pauls Juniors' 1509 magazine is now online!">
   </head>
   <body>
-    <p id="article">Should b "example entry"</p>
+    <p id="article">stuff</p>
     <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
       <main class="mdl-layout__content">
         <div class="demo-blog__posts mdl-grid">
@@ -384,30 +384,9 @@
         messagingSenderId: "655714895872"
       };
       firebase.initializeApp(config);
-      var database = firebase.database();
-	    var children = [];
-	    var userRef = database.ref('example entry');
-	    // Assume we have the following data in our database:
-/*{
-"name": {
-"first": "Ada",
-"last": "Lovelace"
-}
-}*/
-
-// Test for the existence of certain keys within a DataSnapshot
-var ref = database.ref("");
-ref.once("value").then(function(snapshot) {
-	var key = snapshot.getKey();
-	document.getElementById("article").innerHTML = key;
-snapshot.forEach(function(childSnapshot) {
-    var childKey = childSnapshot.getKey();
-	//children.push(childKey);
-	document.getElementById("article").innerHTML = childKey;
-    var childData = childSnapshot.val();
-    // ...
-  });
-	 
+      var homepageRef = database.ref('homepage');
+homepageRef.on('value', function(snapshot) {
+  document.getElementById("article").innerHTML = snapshot.getKey();
 });
   //document.getElementById("article").innerHTML = children.length;
 
