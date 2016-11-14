@@ -387,7 +387,7 @@
 	    var userRef = database.ref('example entry');
 	    userRef.forEach(function(childSnapshot) {
     var childKey = childSnapshot.key();
-		    children[children.length] = child;Key
+		    children[children.length] = childKey;
     // ...
   });
   document.getElementById("article").innerHTML = children;
