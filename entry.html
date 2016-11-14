@@ -33,25 +33,7 @@
     <meta name="description" content="Example entry for 1509 Online">
     <title>Example Entry</title>
     <link rel='shortcut icon' href='images/favicon.ico' type='image/x-icon'/ >
-	<script>
-  // Initialize Firebase
- /* var config = {
-    apiKey: "AIzaSyChG9cMyAkkZSXCZp1OmfpxbJYnJvh3XnQ",
-    authDomain: "online-eff31.firebaseapp.com",
-    databaseURL: "https://online-eff31.firebaseio.com",
-    storageBucket: "online-eff31.appspot.com",
-    messagingSenderId: "655714895872"
-  };
-  firebase.initializeApp(config);
-  var entry = "example entry";
-return firebase.database().ref(entry).once('value').then(function(snapshot) {
-  var title = snapshot.val().title;
-  document.getElementById('firebase-title').innerHTML = "test";
-});*/
-	document.getElementById('firebase-title').innerHTML = "test";	
-</script>
-		   
-</script>
+	
   </head>
   <body>
 	  
@@ -120,6 +102,26 @@ return firebase.database().ref(entry).once('value').then(function(snapshot) {
       </main>
       <div class="mdl-layout__obfuscator"></div>
     </div>
+	      
     <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+	      <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyChG9cMyAkkZSXCZp1OmfpxbJYnJvh3XnQ",
+    authDomain: "online-eff31.firebaseapp.com",
+    databaseURL: "https://online-eff31.firebaseio.com",
+    storageBucket: "online-eff31.appspot.com",
+    messagingSenderId: "655714895872"
+  };
+  firebase.initializeApp(config);
+	var messagesRef = firebase.database.ref('example entry');
+  // Make sure we remove all previous listeners.
+  messagesRef.off();
+
+  // Loads the last 12 messages and listen for new ones.
+    //var val = data.val();
+	  //var title = val.title;
+</script>
   </body>
 </html>
