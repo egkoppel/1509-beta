@@ -64,7 +64,7 @@
     <meta name="description" content="The St Pauls Juniors' 1509 magazine is now online!">
   </head>
   <body>
-    <p id="article">more testing stuff</p>
+    <p id="article">list of articles</p>
     <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
       <main class="mdl-layout__content">
         <div class="demo-blog__posts mdl-grid">
@@ -383,6 +383,7 @@
         storageBucket: "online-eff31.appspot.com",
         messagingSenderId: "655714895872"
       };
+	    var articles = [];
       firebase.initializeApp(config);
 	    var database = firebase.database();
       var homepageRef = database.ref('homepage');
@@ -390,10 +391,11 @@ homepageRef.on('value', function(snapshot) {
 	snapshot.forEach(function(childSnapshot) {
     var childKey = childSnapshot.getKey();
     var childData = childSnapshot.val();
-		document.getElementById("article").innerHTML = childSnapshot.val();
+		articles.push(childSnapshot.getKey());
+		
     // ...
   });
-  
+  document.getElementById("article").innerHTML = articles;
 });
   //document.getElementById("article").innerHTML = children.length;
 
