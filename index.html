@@ -385,7 +385,8 @@
       var database = firebase.database();
 	    var userRef = database.ref('example entry');
 userRef.on('value', function(snapshot) {
-  document.getElementById("article").innerHTML = snapshot.val();
+	var dataArray = snapshot.val();
+  document.getElementById("article").innerHTML = dataArray[0];
 });
 </script>
   </body>
