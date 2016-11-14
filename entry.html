@@ -109,7 +109,7 @@
       firebase.initializeApp(config);
       var database = firebase.database();
 	var titleRef = database.ref('example entry/title');
-titleRef.on('key', function(snapshot) {
+titleRef.on('value', function(snapshot) {
   document.getElementById("title").innerHTML = snapshot.val();
 });
 	    var bodyRef = database.ref('example entry/body');
