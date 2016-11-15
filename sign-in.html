@@ -41,6 +41,7 @@
         firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
+      window.location = "https://1509-online.github.io/edit.html"
       document.getElementById("sign-in").style.visibility = 'hidden'
       document.getElementById("sign-out").style.visibility = 'visible'
   } else {
