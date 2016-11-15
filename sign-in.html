@@ -25,6 +25,13 @@
         messagingSenderId: "655714895872"
       };
       firebase.initializeApp(config);
+        var email = "myemail@email.com";
+var password = "mypassword";
+
+firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+   alert(error.code);
+   alert(error.message);
+});
         function signIn() {
             var email = document.getElementById('email').value;
                 var password = document.getElementById('pass').value;
