@@ -5,9 +5,21 @@
 <title>Log In</title>
 </head>
 <body>
-    <button id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+    <!--<button id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
           <i class="material-icons">account_circle</i>Sign-in with Google
         </button>
+    <button id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+          <i class="material-icons">account_circle</i>Sign out
+        </button>-->
+    <div id="sign-in">
+        <form>
+            <input type="text" placeholder="email" id="email">
+            <input type="password" placeholder="password" id="password">
+        </form>
+    <button id="sign-in-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+          <i class="material-icons">account_circle</i>Sign-in
+        </button>
+    </div>
     <button id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
           <i class="material-icons">account_circle</i>Sign out
         </button>
@@ -25,7 +37,7 @@
         messagingSenderId: "655714895872"
       };
       firebase.initializeApp(config);
-        var provider = new firebase.auth.GoogleAuthProvider();
+        /*var provider = new firebase.auth.GoogleAuthProvider();*/
         firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
@@ -36,7 +48,7 @@
       document.getElementById("sign-out").style.visibility = 'hidden'
       document.getElementById("sign-in").style.visibility = 'visible'
   }
-});
+});/*
         document.getElementById("sign-in").addEventListener("click", function(){
 
         firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -67,7 +79,7 @@
 }, function(error) {
   // An error happened.
 });
-        });
+        });*/
       </script>
       </body>
       </html>
