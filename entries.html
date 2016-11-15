@@ -136,10 +136,10 @@ function getQueryVariable(variable) {
     if (pair[0] == variable) {
 	    var returnValue = pair[1].replace(/%20/g," ");
 	    alert(returnValue);
-      return pair[1];
+      return returnValue;
     }
   } 
-  alert('No article specified. If you followed a link from the website');
+  alert('No article specified.');
 }
 </script>
   </body>
