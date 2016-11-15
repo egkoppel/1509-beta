@@ -1,8 +1,16 @@
 <html>
 <head>
-<title>Create Article</title>
+<title>Sign In</title>
 </head>
 <body>
+    <form onsubmit="return signIn()">
+        Email:<br>
+  <input type="text" name="email" id="email">
+  <br>
+  Password:<br>
+  <input type="text" name="password" id="pass">
+        <input type="submit" value="Submit">
+    </form>
 <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
@@ -17,6 +25,17 @@
         messagingSenderId: "655714895872"
       };
       firebase.initializeApp(config);
+        function signIn() {
+            var email = document.getElementById('email').value;
+                var password = document.getElementById('pass').value;
+        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+            alert(errorMessage);
+  // ...
+});
+        }
       </script>
       </body>
       </html>
