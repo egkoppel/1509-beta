@@ -30,7 +30,12 @@
   var token = result.credential.accessToken;
   // The signed-in user info.
   var user = result.user;
-  // ...
+  if (user.email == "egluschovekoppel1@gmail.com" || user.email == "arsh.parekh@gmail.com" || user.email == "langer.timothy@gmail.com
+") {
+      alert("Welcome");
+  } else {
+      alert("No entry!");
+  }
 }).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
@@ -39,7 +44,7 @@
   var email = error.email;
   // The firebase.auth.AuthCredential type that was used.
   var credential = error.credential;
-  // ...
+  alert(errorMessage);
 });
         });
       </script>
