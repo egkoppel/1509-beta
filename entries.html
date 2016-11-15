@@ -109,7 +109,8 @@
       firebase.initializeApp(config);
       var database = firebase.database();
       
-	    var name = getQueryVariable('name');
+	    
+var name = getQueryVariable("name");
 	var titleRef = database.ref('entries/' + name);
 titleRef.on('value', function(snapshot) {
   document.getElementById("title").innerHTML = snapshot.getKey();
@@ -128,7 +129,6 @@ dateRef.on('value', function(snapshot) {
 });
 </script>
 	      <script>
-var param1var = getQueryVariable("param1");
 
 function getQueryVariable(variable) {
   var query = window.location.search.substring(1);
