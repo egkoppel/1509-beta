@@ -135,7 +135,6 @@ function getQueryVariable(variable) {
     var pair = vars[i].split("=");
     if (pair[0] == variable) {
 	    var returnValue = pair[1].replace(/%20/g," ");
-	    alert(returnValue);
       return returnValue;
     }
   } 
