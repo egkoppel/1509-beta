@@ -164,7 +164,6 @@
       <div class="mdl-layout__obfuscator"></div>
     </div>
     <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
-  </body>
   <script>
     Array.prototype.forEach.call(document.querySelectorAll('.mdl-card__media'), function(el) {
       var link = el.querySelector('a');
@@ -180,132 +179,10 @@
       });
     });
   </script>
-  <!-- COOKIES!!! -->
-    <!--<button id="snackbar-cookies" class="mdl-button mdl-js-button mdl-button--raised" type="button">Cookie info</button>
-    <div id="snackbar-cookies-div" class="mdl-js-snackbar mdl-snackbar">
-      <div class="mdl-snackbar__text"></div>
-      <button class="mdl-snackbar__action" type="button"></button>
-    </div>
-    <script>
-    (function() {
-      'use strict';
-      var snackbarContainer = document.querySelector('#snackbar-cookies-div');
-      var showSnackbarButton = document.querySelector('#snackbar-cookies');
-      var handler = function(event) {
-        showSnackbarButton.style.backgroundColor = '';
-      };
-      showSnackbarButton.addEventListener('click', function() {
-       'use strict';
-        var data = {
-          message: 'This website needs cookies to continue, its EU law. Have a cookies.',
-          timeout: 10000,
-          actionHandler: handler,
-         actionText: 'OK'
-       };
-       snackbarContainer.MaterialSnackbar.showSnackbar(data);
-      });
-    }());
-    </script>-->
+ 
   <a href="https://github.com/1509-online/1509-online.github.io" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--white">EDIT</a>
   
-	  <p id="article">db stuff this will go when it works</p>
-    <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
-      <main class="mdl-layout__content">
-        <div class="demo-blog__posts mdl-grid">
-          <div class="mdl-card welcome mdl-cell mdl-cell--8-col">
-            <div class="mdl-card__media mdl-color-text--grey-50">
-              <h3>Welcome to 1509 Online!</h3>
-            </div>
-            <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-              <div class="minilogo">
-              	<img width="45" src="images/timothy-langer-circle.png">
-              </div>
-              <div>
-                <strong>Timothy Langer U3H - Web Editor</strong>
-                <span>8/11/2016</span>
-              </div>
-            </div>
-          </div>
-          <div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
-            <div class="mdl-card__media mdl-color--white mdl-color-text--grey-600">
-              <img src="images/sps-logo.png">
-              The SPJ Pupils' magazine
-            </div>
-            <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
-              <div>
-                <strong>1509 Editors</strong>
-              </div>
-              <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="menubtn">
-                <li class="mdl-menu__item" href="about_editor.html">About</li>
-                <li class="mdl-menu__item" href="mailto:1509editor@stpaulsschool.org.uk?subject=1509%20Online&amp;body=I%20would%20like%20to%20contact%201509%20online%20about%3A">Contact</li>
-              </ul>
-              <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-                <i class="material-icons" role="presentation">more_vert</i>
-                <span class="visuallyhidden">Show Menu</span>
-              </button>
-            </div>
-          </div>
-          <div class="mdl-card 20161111-trump mdl-cell mdl-cell--12-col">
-            <div class="mdl-card__media mdl-color-text--grey-50">
-              <h3><a href="20161111-trump.html">Donald Trump - yay or nay?</a></h3>
-            </div>
-            <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-              Donald Trump has been elected president for the next four years at the very least. What next? Joe Leventis from U3F explains.
-            </div>
-            <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-              <div class="minilogo">
-              	<img width="45" src="images/timothy-langer-circle.png">
-              </div>
-              <div>
-                <strong>Timothy Langer U3H - Web Editor</strong>
-                <span>6/11/16</span>
-              </div>
-            </div>
-          </div>
-          <div class="mdl-card article-template mdl-cell mdl-cell--12-col">
-            <div class="mdl-card__media mdl-color-text--grey-50">
-              <h3><a href="entry.html">Article Template</a></h3>
-            </div>
-            <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
-              This is the home of the St Paul's Juniors institution that is 1509. Here you can view both past 1509 issues and articles, videos and audio files that are exclusive to this website! You can also submit articles you have written to be published here or on the magazine. Finally, there will be online competitions and surveys for you to complete and take part in. Thank you for all your contributions and have a look at the amazing features of the 1509 website!
-            </div>
-            <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-              <div class="minilogo">
-              	<img width="45" src="images/timothy-langer-circle.png">
-              </div>
-              <div>
-                <strong>Timothy Langer U3H - Web Editor</strong>
-                <span>6/11/2016</span>
-              </div>
-            </div>
-          </div>
-          <nav class="demo-nav mdl-cell mdl-cell--12-col">
-            <div class="section-spacer"></div>
-          </nav>
-        </div>
-        <footer class="mdl-mini-footer">
-          <!--<div class="mdl-mini-footer--left-section">
-            <button class="mdl-mini-footer--social-btn social-btn social-btn__twitter">
-              <span class="visuallyhidden">Twitter</span>
-            </button>
-            <button class="mdl-mini-footer--social-btn social-btn social-btn__blogger">
-              <span class="visuallyhidden">Facebook</span>
-            </button>
-            <button class="mdl-mini-footer--social-btn social-btn social-btn__gplus">
-              <span class="visuallyhidden">Google Plus</span>
-            </button>
-          </div>-->
-          <div class="mdl-mini-footer--left-section">
-            <button class="mdl-mini-footer--social-btn social-btn__share">
-              <i class="material-icons" role="presentation" id="tt2">share</i>
-              <span class="visuallyhidden">share</span>
-              <div class="mdl-tooltip" for="tt2">Share</div>
-            </button>
-          </div>
-        </footer>
-      </main>
-      <div class="mdl-layout__obfuscator"></div>
-    </div>
+	  
     <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
