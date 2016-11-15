@@ -1,9 +1,19 @@
 <html>
 <head>
-<title>Sign In</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<title>Edit</title>
 </head>
 <body>
-        <button onclick="signOut();return false;">Log out</button>
+    <!--<button id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+          <i class="material-icons">account_circle</i>Sign-in with Google
+        </button>
+    <button id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+          <i class="material-icons">account_circle</i>Sign out
+        </button>-->
+    <button id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+          <i class="material-icons">account_circle</i>Sign out
+        </button>
 <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
@@ -18,13 +28,27 @@
         messagingSenderId: "655714895872"
       };
       firebase.initializeApp(config);
-        function signOut() {
-            firebase.auth().signOut().then(function() {
-   window.location = "https://1509-online.github.io/";
-}, function(error) {
-   alert(error.code);
-   alert(error.message);
+        /*var provider = new firebase.auth.GoogleAuthProvider();*/
+        firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+  } else {
+    // No user is signed in.
+      window.location = "https://1509-online.github.io/index.html"
+  }
 });
+        
+        
+        document.getElementById("sign-out").addEventListener("click", function(){
+        firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+}, function(error) {
+  // An error happened.
+});
+        });
+        
+        
+        
       </script>
       </body>
       </html>
