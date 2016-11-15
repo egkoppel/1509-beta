@@ -109,7 +109,7 @@
       firebase.initializeApp(config);
       var database = firebase.database();
       
-	    var name = $_GET('name');
+	    var name = getQueryVariable('name');
 	var titleRef = database.ref('entries/' + name);
 titleRef.on('value', function(snapshot) {
   document.getElementById("title").innerHTML = snapshot.getKey();
