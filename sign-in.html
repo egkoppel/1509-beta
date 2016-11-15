@@ -8,6 +8,9 @@
     <button id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
           <i class="material-icons">account_circle</i>Sign-in with Google
         </button>
+    <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+          <i class="material-icons">account_circle</i>Sign out
+        </button>
 <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
@@ -23,6 +26,17 @@
       };
       firebase.initializeApp(config);
         var provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+      document.getElementById("sign-in").style.visibility = 'hidden'
+      document.getElementById("sign-out").style.visibility = 'visible'
+  } else {
+    // No user is signed in.
+      document.getElementById("sign-out").style.visibility = 'hidden'
+      document.getElementById("sign-in").style.visibility = 'visible'
+  }
+});
         document.getElementById("sign-in").addEventListener("click", function(){
 
         firebase.auth().signInWithPopup(provider).then(function(result) {
