@@ -5,7 +5,7 @@
 <title>Log In</title>
 </head>
 <body>
-    <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+    <button id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
           <i class="material-icons">account_circle</i>Sign-in with Google
         </button>
 <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
@@ -23,7 +23,7 @@
       };
       firebase.initializeApp(config);
         var provider = new firebase.auth.GoogleAuthProvider();
-        document.getElementById("login").addEventListener("click", function(){
+        document.getElementById("sign-in").addEventListener("click", function(){
 
         firebase.auth().signInWithPopup(provider).then(function(result) {
   // This gives you a Google Access Token. You can use it to access the Google API.
