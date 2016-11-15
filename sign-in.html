@@ -9,7 +9,7 @@
   <br>
   Password:<br>
   <input type="text" name="password" id="pass">
-        <button onclick="signIn();return false;">Log in</button>
+        <button onclick="signIn();return false;">Log in to 1509 online</button>
     </form>
 <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
@@ -25,13 +25,6 @@
         messagingSenderId: "655714895872"
       };
       firebase.initializeApp(config);
-        var email = "myemail@email.com";
-var password = "mypassword";
-
-firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-   alert(error.code);
-   alert(error.message);
-});
         function signIn() {
             var email = document.getElementById('email').value;
                 var password = document.getElementById('pass').value;
@@ -43,6 +36,14 @@ firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error
   // ...
 });
         }
+        firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+      window.location = "https://github.com/1509-online/1509-online.github.io";
+  } else {
+    // No user is signed in.
+  }
+});
       </script>
       </body>
       </html>
