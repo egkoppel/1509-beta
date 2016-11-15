@@ -1,1 +1,30 @@
-
+<html>
+<head>
+<title>Sign In</title>
+</head>
+<body>
+        <button onclick="signOut();return false;">Log out</button>
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-auth.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyChG9cMyAkkZSXCZp1OmfpxbJYnJvh3XnQ",
+        authDomain: "online-eff31.firebaseapp.com",
+        databaseURL: "https://online-eff31.firebaseio.com",
+        storageBucket: "online-eff31.appspot.com",
+        messagingSenderId: "655714895872"
+      };
+      firebase.initializeApp(config);
+        function signOut() {
+            firebase.auth().signOut().then(function() {
+   window.location = "https://1509-online.github.io/";
+}, function(error) {
+   alert(error.code);
+   alert(error.message);
+});
+      </script>
+      </body>
+      </html>
