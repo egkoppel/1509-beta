@@ -52,7 +52,7 @@
             <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
               <div class="minilogo"><img src="https://avatars2.githubusercontent.com/u/23385474?v=3&s=460" width="45"></div>
               <div>
-                <strong id="user">Getting user...</strong>
+                <strong id="user">Getting author...</strong>
                 <span id="date">Getting date...</span>
               </div>
               <div class="section-spacer"></div>
@@ -108,7 +108,12 @@
       };
       firebase.initializeApp(config);
       var database = firebase.database();
-      var name="<?php echo $_GET['name']; ?>";
+      function $_GET(q,s) { 
+        s = s ? s : window.location.search; 
+        var re = new RegExp('&'+q+'(?:=([^&]*))?(?=&|$)','i'); 
+        return (s=s.replace(/^?/,'&').match(re)) ? (typeof s[1] == 'undefined' ? '' : decodeURIComponent(s[1])) : undefined; 
+    } 
+	    var name = $_GET('name');
 	var titleRef = database.ref('entries/' + name);
 titleRef.on('value', function(snapshot) {
   document.getElementById("title").innerHTML = snapshot.getKey();
