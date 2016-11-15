@@ -188,7 +188,7 @@ body .demo-blog {
 }
 .demo-blog .20161111-trump .mdl-card__media {
   background-image: url('images/20161111-trump.jpg');
-}
+}*/
 .demo-blog .something-else .mdl-card__media {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -202,7 +202,7 @@ body .demo-blog {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-}*/
+}
 .demo-blog .something-else > button {
   position: absolute;
   top: 0;
