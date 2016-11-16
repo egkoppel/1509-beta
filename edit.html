@@ -134,7 +134,8 @@ ul.tab li a:focus, .active {background-color: #ccc;}
             var date = document.getElementById("date").value;
             var description = document.getElementById("summary").value;
             var image = document.getElementById("image").value;
-            
+            //To prevent accidents. I had one and it deleted everything :(
+            if (title != "") {
             var articleRef = firebase.database().ref('entries/' + title);
             // An article entry.
             articleRef.set({ body: style(article), user: user, date: date, summary: description, image: image })
@@ -153,6 +154,9 @@ ul.tab li a:focus, .active {background-color: #ccc;}
                          console.log('Synchronization failed');
                          alert(error);
                     });
+            } else {
+                alert("Add a title");
+            }
 });
 function preview() {
     var text = style(document.getElementById("code").value);
