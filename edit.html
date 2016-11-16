@@ -56,6 +56,7 @@ ul.tab li a:focus, .active {background-color: #ccc;}
     <input id="title" placeholder="Title"/><br>
     <input id="user" placeholder="Name"/><br>
     <input id="date" placeholder="Date"/><br>
+    <input id="image" placeholder="Link to image (at least 820 pixles in width)"/><br>
     <input id="summary" placeholder="Summary"/><br>
     <textarea id="code" onchange="preview()" placeholder="Article"></textarea><br>
     <button id="publish" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
@@ -129,10 +130,11 @@ ul.tab li a:focus, .active {background-color: #ccc;}
             var user = document.getElementById("user").value;
             var date = document.getElementById("date").value;
             var description = document.getElementById("summary").value;
+            var image = document.getElementById("image").value;
             
             var articleRef = firebase.database().ref('entries/' + title);
             // An article entry.
-            articleRef.set({ body: article, user: user, date: date, summary: description })
+            articleRef.set({ body: article, user: user, date: date, summary: description, image: image })
             .then(function() {
                   console.log('Synchronization succeeded');
                   alert("Success");
