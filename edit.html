@@ -8,10 +8,14 @@
     <button id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
           <i class="material-icons">account_circle</i>Sign out
         </button>
-    <input id="code" onchange="preview()"/>
+    <input id="title" placeholder="Title"/><br>
+    <input id="user" placeholder="Name"/><br>
+    <input id="date" placeholder="Date"/><br>
+    <input id="summary" placeholder="Summary"/><br>
+    <input id="code" onchange="preview()" placeholder="Article"/><br>
     <button id="publish" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
           <i class="material-icons">check</i>
-        </button>
+        </button><br>
     <p id="preview"></p>
 <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
@@ -50,7 +54,6 @@
             var text = document.getElementById("code").value;
             document.getElementById("preview").innerHTML = text;
         }
-        
       </script>
       </body>
       </html>
