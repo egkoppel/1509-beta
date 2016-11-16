@@ -69,7 +69,8 @@ ul.tab li a:focus, .active {background-color: #ccc;}
         <h3>Help</h3>
         <p>For headers put # at the start and ## at the end. Example:<br># This will be a header ## <br>Will come out like this:<br></p><h2>This will be a header</h2><br>
         <p>For bold put * at the start and ** at the end. Example:<br>* This will be bold ** <br>Will come out like this:<br></p><b>This will be bold</b><br>
-        <p>For italics put _ at the start and __ (double underscore) at the end. Example:<br>_This will be in italics__ <br>Will come out like this:<br></p><i>This will be in italics</i>
+        <p>For italics put / at the start and // at the end. Example:<br>/ This will be in italics // <br>Will come out like this:<br></p><i>This will be in italics</i>
+        <p>For underline put _ at the start and __ (double underscore) at the end. Example:<br>_ This will be underlined __ <br>Will come out like this:<br></p><u>This will be underlined</u>
     </div>
     
     
@@ -159,15 +160,18 @@ function preview() {
     function style(text) {
         //Newline \n
         returnText = text.replace(/\n/g,"<br>");
-        //Header <h2>
+        //Header <h2> # ##
         returnText = returnText.replace(/##/g,"</h2>");
         returnText = returnText.replace(/#/g,"<h2>");
-        //Bold <b>
+        //Bold <b> * **
         returnText = returnText.replace(/\*\*/g,"</b>");
         returnText = returnText.replace(/\*/g,"<b>");
-        //Italics <i>
-        returnText = returnText.replace(/__/g,"</i>");
-        returnText = returnText.replace(/_/g,"<i>");
+        //Italics <i> / //
+        returnText = returnText.replace(/\/\//g,"</i>");
+        returnText = returnText.replace(/\//g,"<i>");
+        //Underline <u> _ __
+        returnText = returnText.replace(/__/g,"</u>");
+        returnText = returnText.replace(/_/g,"<u>");
         return returnText;
     }
 
