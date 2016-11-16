@@ -49,6 +49,7 @@ ul.tab li a:focus, .active {background-color: #ccc;}
     <ul class="tab">
         <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Edit')">Create</a></li>
         <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Help')">Help</a></li>
+        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'User')">New user</a></li>
     </ul>
     
     <div id="Edit" class="tabcontent">
@@ -73,6 +74,15 @@ ul.tab li a:focus, .active {background-color: #ccc;}
         <p>For underline put _ at the start and __ (double underscore) at the end. Example:<br>_ This will be underlined __ <br>Will come out like this:<br></p><u>This will be underlined</u>
     </div>
     
+    <div id="User" class="tabcontent">
+        <h3>Create new user</h3>
+        <p>You will automatically be signed in to the new account.
+        <input id="email" placeholder="Email"/><br>
+    <input id="pass" placeholder="Password" type="password"/><br>
+            <button id="add" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+          <i class="material-icons">person_add</i>Add user
+        </button>
+    </div>
     
     <script>
         function openTab(evt, tabName) {
@@ -119,6 +129,16 @@ ul.tab li a:focus, .active {background-color: #ccc;}
   // Sign-out successful.
 }, function(error) {
   // An error happened.
+});
+        });
+        
+         document.getElementById("add").addEventListener("click", function(){
+        firebase.auth().createUserWithEmailAndPassword(document.getElementById("email").value;, document.getElementById("pass").value;).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // ...
+            alert(errorMessage);
 });
         });
         
