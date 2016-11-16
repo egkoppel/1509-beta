@@ -61,12 +61,21 @@
             var user = document.getElementById("user").value;
             var date = document.getElementById("date").value;
             var description = document.getElementById("summary").value;
-  firebase.database().ref('entries/' + title).set({
+            // An article entry.
+  var data = {
     body: article,
     user: user,
-    date : date,
-      summary : description
-  });
+    date: date,
+    summary: description
+  };
+  // Get a key for a new Post.
+  var newKey = firebase.database().ref().push().key;
+
+  // Write the new post's data simultaneously in the posts list and the user's post list.
+  var updates = {};
+  updates['/' + title + '/' + newKey] = data;
+
+  return firebase.database().ref().update(updates);
 }
       </script>
       </body>
