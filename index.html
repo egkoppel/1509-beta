@@ -198,6 +198,16 @@ homepageRef.on('value', function(snapshot) {
 	snapshot.forEach(function(childSnapshot) {
     var childKey = childSnapshot.getKey();
     var childData = childSnapshot.val();
+                     var user = "SYSTEM";
+                     var userRef = database.ref('entries/'+ childKey + '/user');
+                     userRef.on('value', function(snapshot) {
+                                user = snapshot.val();
+                                });
+                     var date = "1509";
+                     var dateRef = database.ref('entries/'+ childKey + '/date');
+                     dateRef.on('value', function(snapshot) {
+                                date = snapshot.val();
+                                });
 		document.getElementById("entries").innerHTML += `<div class="mdl-card article-template mdl-cell mdl-cell--12-col">
             <div class="mdl-card__media mdl-color-text--grey-50">
               <h3><a href="entries.html?name=` + childKey + `">` + childKey + `</a></h3>
@@ -210,8 +220,8 @@ homepageRef.on('value', function(snapshot) {
               	<img width="45" src="images/timothy-langer-circle.png">
               </div>
               <div>
-                <strong>Timothy Langer U3H - Web Editor</strong>
-                <span>6/11/2016</span>
+                <strong>` + user + `</strong>
+                <span>` + date + `</span>
               </div>
             </div>
           </div>`

@@ -179,11 +179,11 @@ body .demo-blog {
   -webkit-order: -1;
       -ms-flex-order: -1;
           order: -1;
-}/*
+}
 .demo-blog .welcome .mdl-card__media {
   background-image: url('images/founders-court.jpg');
 }
-.demo-blog .amazing .mdl-card__media {
+/*.demo-blog .amazing .mdl-card__media {
   background-image: url('images/20161111-trump.jpg');
 }
 .demo-blog .20161111-trump .mdl-card__media {
