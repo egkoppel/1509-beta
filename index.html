@@ -195,6 +195,7 @@
 	    var database = firebase.database();
       var homepageRef = database.ref('entries');
 homepageRef.on('value', function(snapshot) {
+               document.getElementById("entries").innerHTML = "";
 	snapshot.forEach(function(childSnapshot) {
     var childKey = childSnapshot.getKey();
     var childData = childSnapshot.val();
@@ -208,12 +209,17 @@ homepageRef.on('value', function(snapshot) {
                      dateRef.on('value', function(snapshot) {
                                 date = snapshot.val();
                                 });
+                     var summary = "This is the home of the St Paul's Juniors institution that is 1509. Here you can view both past 1509 issues and articles, videos and audio files that are exclusive to this website! You can also submit articles you have written to be published here or on the magazine. Finally, there will be online competitions and surveys for you to complete and take part in. Thank you for all your contributions and have a look at the amazing features of the 1509 website!";
+                     var summaryRef = database.ref('entries/'+ childKey + '/summary');
+                     summaryRef.on('value', function(snapshot) {
+                                summary = snapshot.val();
+                                });
 		document.getElementById("entries").innerHTML += `<div class="mdl-card article-template mdl-cell mdl-cell--12-col">
             <div class="mdl-card__media mdl-color-text--grey-50">
               <h3><a href="entries.html?name=` + childKey + `">` + childKey + `</a></h3>
             </div>
             <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
-              This is the home of the St Paul's Juniors institution that is 1509. Here you can view both past 1509 issues and articles, videos and audio files that are exclusive to this website! You can also submit articles you have written to be published here or on the magazine. Finally, there will be online competitions and surveys for you to complete and take part in. Thank you for all your contributions and have a look at the amazing features of the 1509 website!
+              ` + summary + `
             </div>
             <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
               <div class="minilogo">
