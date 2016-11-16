@@ -140,6 +140,12 @@ ul.tab li a:focus, .active {background-color: #ccc;}
             .then(function() {
                   console.log('Synchronization succeeded');
                   alert("Success");
+                  var title = document.getElementById("title").value = "";
+                  var article = document.getElementById("code").value = "";
+                  var user = document.getElementById("user").value = "";
+                  var date = document.getElementById("date").value = "";
+                  var description = document.getElementById("summary").value = "";
+                  var image = document.getElementById("image").value = "";
                   })
                   .catch(function(error) {
                          console.log('Synchronization failed');
