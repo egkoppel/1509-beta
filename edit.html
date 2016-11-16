@@ -61,8 +61,18 @@
             var user = document.getElementById("user").value;
             var date = document.getElementById("date").value;
             var description = document.getElementById("summary").value;
+            
+            var articleRef = firebase.database().ref('entries/' + title);
             // An article entry.
-  var newRef = firebase.database().push(title);
+            articleRef.set({ body: article, user: user, date: date, summary: description })
+            .then(function() {
+                  console.log('Synchronization succeeded');
+                  alert("Success");
+                  })
+                  .catch(function(error) {
+                         console.log('Synchronization failed');
+                         alert(error);
+                    });
 }
       </script>
       </body>
