@@ -14,7 +14,7 @@
     <input id="summary" placeholder="Summary"/><br>
     <input id="code" onchange="preview()" placeholder="Article"/><br>
     <button id="publish" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-          <i class="material-icons">check</i>
+          <i class="material-icons">check</i>Publish
         </button><br>
     <p id="preview"></p>
 <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
@@ -55,7 +55,7 @@
             document.getElementById("preview").innerHTML = text;
         }
         
-        function publish() {
+        document.getElementById("publish").addEventListener("click", function(){
             var title = document.getElementById("title").value;
             var article = document.getElementById("code").value;
             var user = document.getElementById("user").value;
@@ -73,7 +73,7 @@
                          console.log('Synchronization failed');
                          alert(error);
                     });
-}
+});
       </script>
       </body>
       </html>
