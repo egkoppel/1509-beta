@@ -5,15 +5,14 @@
 <title>Edit</title>
 </head>
 <body>
-    <!--<button id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-          <i class="material-icons">account_circle</i>Sign-in with Google
-        </button>
-    <button id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-          <i class="material-icons">account_circle</i>Sign out
-        </button>-->
     <button id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
           <i class="material-icons">account_circle</i>Sign out
         </button>
+    <input id="code" onchange="preview()"/>
+    <button id="publish" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+          <i class="material-icons">check</i>
+        </button>
+    <p id="preview"></p>
 <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
@@ -47,7 +46,10 @@
 });
         });
         
-        
+        function preview() {
+            var text = document.getElementById("code").value;
+            document.getElementById("code").innerHTML = text;
+        }
         
       </script>
       </body>
