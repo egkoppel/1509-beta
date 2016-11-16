@@ -134,7 +134,7 @@ ul.tab li a:focus, .active {background-color: #ccc;}
             
             var articleRef = firebase.database().ref('entries/' + title);
             // An article entry.
-            articleRef.set({ body: article, user: user, date: date, summary: description, image: image })
+            articleRef.set({ body: style(article), user: user, date: date, summary: description, image: image })
             .then(function() {
                   console.log('Synchronization succeeded');
                   alert("Success");
