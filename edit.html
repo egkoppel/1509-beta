@@ -54,6 +54,20 @@
             var text = document.getElementById("code").value;
             document.getElementById("preview").innerHTML = text;
         }
+        
+        function publish() {
+            var title = document.getElementById("title").value;
+            var article = document.getElementById("code").value;
+            var user = document.getElementById("user").value;
+            var date = document.getElementById("date").value;
+            var description = document.getElementById("summary").value;
+  firebase.database().ref('entries/' + title).set({
+    body: article,
+    user: user,
+    date : date,
+      summary : description
+  });
+}
       </script>
       </body>
       </html>
