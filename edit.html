@@ -73,7 +73,7 @@
 
   // Write the new post's data simultaneously in the posts list and the user's post list.
   var updates = {};
-  updates['/' + title + '/' + newKey] = data;
+  updates['/entries/' + title + '/' + newKey] = data;
 
   return firebase.database().ref().update(updates);
 }
