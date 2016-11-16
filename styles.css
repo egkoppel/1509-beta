@@ -179,7 +179,7 @@ body .demo-blog {
   -webkit-order: -1;
       -ms-flex-order: -1;
           order: -1;
-}
+}/*
 .demo-blog .welcome .mdl-card__media {
   background-image: url('images/founders-court.jpg');
 }
@@ -188,7 +188,7 @@ body .demo-blog {
 }
 .demo-blog .20161111-trump .mdl-card__media {
   background-image: url('images/20161111-trump.jpg');
-}
+}*/
 .demo-blog .something-else .mdl-card__media {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -225,10 +225,10 @@ body .demo-blog {
   background-color: #F5F5F5;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
-}
+}/*
 .demo-blog .on-the-road-again .mdl-card__media {
   background-image: url('images/20161111-trump.jpg');
-}
+}*/
 .demo-blog .demo-blog__posts > .demo-nav {
   margin: 12px 15px;
   display: -webkit-flex;
@@ -277,18 +277,18 @@ body .demo-blog {
   margin-top: 0.5em;
 }
 .demo-blog .mdl-card h3.quote:before {
-  content: '“';
+  content: 'â€œ';
 }
 .demo-blog .mdl-card h3.quote:after {
-  content: '”';
+  content: 'â€';
 }
 .demo-blog--blogpost .custom-header {
   background-color: transparent;
-}
+}/*
 .demo-blog--blogpost .demo-blog__posts > .mdl-card .mdl-card__media {
   background-image: url('images/road_big.jpg');
   height: 280px;
-}
+}*/
 .demo-blog--blogpost .comments {
   background-color: #EEE;
 }
