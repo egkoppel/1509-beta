@@ -1,19 +1,7 @@
 <html>
 <body>
   <script>
-    function getQueryVariable(variable) {
-  var query = window.location.search.substring(1);
-  var vars = query.split("&");
-  for (var i=0;i<vars.length;i++) {
-    var pair = vars[i].split("=");
-    if (pair[0] == variable) {
-	    var returnValue = pair[1].replace(/%20/g," ");
-      return returnValue;
-    }
-  } 
-  alert('No article specified. Please go back');
-}
-    alert(getQueryVariable("test"));
+    alert(getQueryVariable("name"));
     
     function getQueryVariable(variable) {
   var query = window.location.search.substring(1);
@@ -25,7 +13,7 @@
       return returnValue;
     }
   } 
-  alert('No article specified. Please go back');
+  alert('No name specified. Please go back');
 }
   </script>
   </body>
