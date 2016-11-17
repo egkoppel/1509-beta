@@ -1,102 +1,101 @@
 <html>
     <head>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-            rel="stylesheet">
-            <title>Edit</title>
-            <style>
-                ul.tab {
-                    list-style-type: none;
-                    margin: 0;
-                    padding: 0;
-                    overflow: hidden;
-                    border: 1px solid #ccc;
-                    background-color: #f1f1f1;
-                }
-            
-            /* Float the list items side by side */
-            ul.tab li {float: left;}
-            
-            /* Style the links inside the list items */
-            ul.tab li a {
-                display: inline-block;
-                color: black;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-                transition: 0.3s;
-                font-size: 17px;
-            }
-            
-            /* Change background color of links on hover */
-            ul.tab li a:hover {background-color: #ddd;}
-            
-            /* Create an active/current tablink class */
-            ul.tab li a:focus, .active {background-color: #ccc;}
-            
-            /* Style the tab content */
-            .tabcontent {
-                display: none;
-                padding: 6px 12px;
-                border: 1px solid #ccc;
-                border-top: none;
-            }
-        </style>
-    </head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A portfolio template that uses Material Design Lite.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>MDL-Static Website</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.grey-pink.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
     <body>
-        <button id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-            <i class="material-icons">account_circle</i>Sign out
-        </button><br>
-        
-        
-            <ul class="tab">
-                <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Edit')">Edit</a></li>
-                <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Help')">Help</a></li>
-            </ul>
-            
-            <div id="Edit" class="tabcontent">
-                <h3>Edit</h3>
-                <input id="title" placeholder="Title"/><br>
-                <input id="user" placeholder="Name"/><br>
-                <input id="date" placeholder="Date"/><br>
-                <input id="summary" placeholder="Summary"/><br>
-                <textarea id="code" onchange="preview()" placeholder="Article"></textarea><br>
-                <p id="preview"></p>
+    <div class="mdl-layout__container"><div class="mdl-layout mdl-js-layout mdl-layout--fixed-header has-drawer is-upgraded" data-upgraded=",MaterialLayout">
+        <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header"><div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button mdl-layout--small-screen-only"><i class="material-icons"></i></div>
+            <div class="mdl-layout__header-row portfolio-logo-row">
+                <span class="mdl-layout__title">
+                    <div class="portfolio-logo"></div>
+                    <span class="mdl-layout__title">Simple portfolio website</span>
+                </span>
             </div>
-            
-            <div id="Help" class="tabcontent">
-                <h3>Help</h3>
+            <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
+                <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+                    <a class="mdl-navigation__link is-active" href="index.html">Portfolio</a>
+                    <a class="mdl-navigation__link" href="blog.html">Blog</a>
+                    <a class="mdl-navigation__link" href="about.html">About</a>
+                    <a class="mdl-navigation__link" href="contact.html">Contact</a>
+                </nav>
             </div>
-            
-            
-            <script>
-                function openTab(evt, tabName) {
-                    var i, tabcontent, tablinks;
-                    tabcontent = document.getElementsByClassName("tabcontent");
-                    for (i = 0; i < tabcontent.length; i++) {
-                        tabcontent[i].style.display = "none";
-                    }
-                    tablinks = document.getElementsByClassName("tablinks");
-                    for (i = 0; i < tablinks.length; i++) {
-                        tablinks[i].className = tablinks[i].className.replace(" active", "");
-                    }
-                    document.getElementById(tabName).style.display = "block";
-                    evt.currentTarget.className += " active";
-                }
-            </script>
-            <script>
-            
-                                                                                                
-            function preview() {
-                var text = style(document.getElementById("code").value);
-                document.getElementById("preview").innerHTML = text;
-            }
-        function style(text) {
-            returnText = text.replace(/\n/g,"<br>");
-            returnText = returnText.replace(/##/g,"</h2>");
-            returnText = returnText.replace(/#/g,"<h2>");
-            return returnText;
-        }
-            
-            </script>
-    </body>
+        </header>
+        <div class="mdl-layout__drawer mdl-layout--small-screen-only" aria-hidden="true">
+            <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+                <a class="mdl-navigation__link is-active" href="index.html">Portfolio</a>
+                <a class="mdl-navigation__link" href="blog.html">Blog</a>
+                <a class="mdl-navigation__link" href="about.html">About</a>
+                <a class="mdl-navigation__link" href="contact.html">Contact</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="mdl-grid portfolio-max-width">
+                <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Blog template</h2>
+                    </div>
+                    <div class="mdl-card__media">
+                        <img class="article-image" src=" images/portfolio-example-01.jpg" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <strong>Includes</strong>
+                        <span>Design, UX and Frontend Development</span>
+                    </div>
+                    <div class="mdl-grid portfolio-copy">
+                        <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Introduction</h3>
+                        <div class="mdl-cell mdl-cell--6-col mdl-card__supporting-text no-padding">
+                            <p>
+                                Excepteur reprehenderit sint exercitation ipsum consequat qui sit id velit elit. Velit anim eiusmod labore sit amet. Voluptate voluptate irure occaecat deserunt incididunt esse in. Sunt velit aliquip sunt elit ex nulla reprehenderit qui ut eiusmod ipsum do. Duis veniam reprehenderit laborum occaecat id proident nulla veniam. Duis enim deserunt voluptate aute veniam sint pariatur exercitation. Irure mollit est sit labore est deserunt pariatur duis aute laboris cupidatat. Consectetur consequat esse est sit veniam adipisicing ipsum enim irure.
+                            </p>
+                        </div>
+                        <div class="mdl-cell mdl-cell--6-col">
+                            <img class="article-image" src=" images/portfolio-example-02.jpg" border="0" alt="">
+                        </div>
+                        <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Initial Ideas</h3>
+                        <div class="mdl-cell mdl-cell--6-col">
+                            <img class="article-image" src=" images/portfolio-example-03.jpg" border="0" alt="">
+                        </div>
+                        <div class="mdl-cell mdl-cell--6-col mdl-card__supporting-text no-padding ">
+                            <p>
+                                Excepteur reprehenderit sint exercitation ipsum consequat qui sit id velit elit. Velit anim eiusmod labore sit amet. Voluptate voluptate irure occaecat deserunt incididunt esse in. Sunt velit aliquip sunt elit ex nulla reprehenderit qui ut eiusmod ipsum do. Duis veniam reprehenderit laborum occaecat id proident nulla veniam. Duis enim deserunt voluptate aute veniam sint pariatur exercitation. Irure mollit est sit labore est deserunt pariatur duis aute laboris cupidatat. Consectetur consequat esse est sit veniam adipisicing ipsum enim irure.
+                            </p>
+                        </div>
+                        <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Final Concept</h3>
+                        <div class="mdl-cell mdl-cell--6-col">
+                            <img class="article-image" src=" images/portfolio-example-05.jpg" border="0" alt="">
+                        </div>
+                        <div class="mdl-cell mdl-cell--6-col">
+                            <img class="article-image" src=" images/portfolio-example-06.jpg" border="0" alt="">
+                        </div>
+                        <div class="mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding ">
+                            <p>
+                                Excepteur reprehenderit sint exercitation ipsum consequat qui sit id velit elit. Velit anim eiusmod labore sit amet. Voluptate voluptate irure occaecat deserunt incididunt esse in. Sunt velit aliquip sunt elit ex nulla reprehenderit qui ut eiusmod ipsum do. Duis veniam reprehenderit laborum occaecat id proident nulla veniam. Duis enim deserunt voluptate aute veniam sint pariatur exercitation. Irure mollit est sit labore est deserunt pariatur duis aute laboris cupidatat. Consectetur consequat esse est sit veniam adipisicing ipsum enim irure.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="mdl-mini-footer">
+                <div class="mdl-mini-footer__left-section">
+                    <div class="mdl-logo">Simple portfolio website</div>
+                </div>
+                <div class="mdl-mini-footer__right-section">
+                    <ul class="mdl-mini-footer__link-list">
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Privacy &amp; Terms</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </main>
+    <div class="mdl-layout__obfuscator"></div></div></div>
+    <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+</body>
 </html>
