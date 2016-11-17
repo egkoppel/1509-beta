@@ -1,9 +1,259 @@
-<html>
-<body>
-  <script>
-    alert(getQueryVariable("name"));
-    
-    function getQueryVariable(variable) {
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Meta INFO -->
+        <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+                    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+                        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+                            <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.grey-orange.min.css">
+                                <link rel="stylesheet" href="styles.css">
+                                    
+                                    <style>
+                                        #view-source {
+                                            position: fixed;
+                                            display: block;
+                                            right: 0;
+                                            bottom: 0;
+                                            margin-right: 40px;
+                                            margin-bottom: 40px;
+                                            z-index: 900;
+                                        }
+                                    </style>
+                                    <style>
+                                        .demo-layout-transparent {
+                                            background: url('#') center / cover;
+                                        }
+                                    .demo-layout-transparent .mdl-layout__header,
+                                    .demo-layout-transparent .mdl-layout__drawer-button {
+                                        /* This background is dark, so we set text to white. Use black instead if
+                                         your background is light. */
+                                        color: white;
+                                    }
+                                    </style>
+                                    
+                                    <div class="demo-layout-transparent mdl-layout mdl-js-layout">
+                                        <header class="mdl-layout__header mdl-layout__header--transparent">
+                                            <div class="mdl-layout__header-row">
+                                                <!-- TITLE -->
+                                                <span class="mdl-layout-title">1509 Online</span>
+                                                <div class="mdl-layout-spacer"></div>
+                                                <!-- Navigation -->
+                                                <nav class="mdl-navigation">
+                                                    <a class="mdl-navigation__link" href="sign-in.html">Sign in</a>
+                                                </nav>
+                                            </div>
+                                        </header>
+                                        <div class="mdl-layout__drawer">
+                                            <span class="mdl-layout-title">1509 Online</span>
+                                            <nav class="mdl-navigation">
+                                                <a class="mdl-navigation__link" href="entries.html?name=About">About</a>
+                                                <a class="mdl-navigation__link" href="mailto:1509editor@stpaulsschool.org.uk">Contact</a>
+                                                <a class="mdl-navigation__link" href="sign-in.html">Log in</a>
+                                            </nav>
+                                        </div>
+                                        <main class="mdl-layout__content">
+                                        </main>
+                                    </div>
+                                    <!-- TITLE + DESC -->
+                                    <title>1509 Online</title>
+                                    <meta name="description" content="The St Pauls Juniors' 1509 magazine is now online!">
+                                        </head>
+    <body>
+        
+        <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
+            <main class="mdl-layout__content">
+                <div class="demo-blog__posts mdl-grid">
+                    <div class="mdl-card welcome mdl-cell mdl-cell--8-col">
+                        <div class="mdl-card__media mdl-color-text--grey-50">
+                            <h3>Welcome to 1509 Online</h3>
+                        </div>
+                        <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+                            <div class="minilogo">
+                                <img width="45" src="images/timothy-langer-circle.png">
+                                    </div>
+                            <div>
+                                <strong>1509 Editors<!--<a href="example.html" target="popup" onclick="window.open('example.html', 'popup', 'width=640,height=480'); return false">Test</a>--></strong>
+                                <span>16/11/2016</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
+                        <div class="mdl-card__media mdl-color--white mdl-color-text--grey-600">
+                            <img src="images/sps-logo.png">
+                                The SPJ Pupils' magazine
+                                </div>
+                        <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
+                            <div>
+                                <strong>1509 Editors</strong>
+                            </div>
+                            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="menubtn">
+                                <li class="mdl-menu__item" href="about_editor.html">About</li>
+                                <li class="mdl-menu__item" href="mailto=1509editor@stpaulsschool.org.uk">Contact</li>
+                            </ul>
+                            <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                                <i class="material-icons" role="presentation">more_vert</i>
+                                <span class="visuallyhidden">Show Menu</span>
+                            </button>
+                        </div>
+                    </div>
+                    <noscript>
+                        <div class="mdl-card article-template mdl-cell mdl-cell--12-col">
+                            <div class="mdl-card__media mdl-color-text--grey-50">
+                                <h3>JavaScript disabled</h3>
+                            </div>
+                            <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
+                                1509 Online requires JavaScript to be enabled. Please enable it and reload the page.
+                            </div>
+                            <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+                                <div class="minilogo">
+                                    <img width="45" src="images/sps-logo.png">
+                                        </div>
+                                SYSTEM
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </noscript>
+                    <div id="entries">
+                        <div class="mdl-card 20161111-trump mdl-cell mdl-cell--12-col">
+                            <div class="mdl-card__media mdl-color-text--grey-50">
+                                <h3><a href="20161111-trump.html">Donald Trump - yay or nay?</a></h3>
+                            </div>
+                            <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+                                Donald Trump has been elected president for the next four years at the very least. What next? Joe Leventis from U3F explains.
+                            </div>
+                            <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+                                <div class="minilogo">
+                                    <img width="45" src="images/timothy-langer-circle.png">
+                                        </div>
+                                <div>
+                                    <strong>Timothy Langer U3H - Web Editor</strong>
+                                    <span>6/11/16</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <nav class="demo-nav mdl-cell mdl-cell--12-col">
+                        <div class="section-spacer"></div>
+                    </nav>
+                </div>
+                
+                <!-- <footer class="mdl-mini-footer">
+                 
+                 Use The drawer contact and share function instead, this is in case we wish to revert
+                 
+                 <div class="mdl-mini-footer--left-section">
+                 <button class="mdl-mini-footer--social-btn social-btn__share">
+                 <i class="material-icons" role="presentation" id="tt2">share</i>
+                 <span class="visuallyhidden">share</span>
+                 <div class="mdl-tooltip" for="tt2">Share</div>
+                 </button>
+                 </div> -->
+                
+                </footer>
+            </main>
+            <div class="mdl-layout__obfuscator"></div>
+        </div>
+        <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+        <script>
+            Array.prototype.forEach.call(document.querySelectorAll('.mdl-card__media'), function(el) {
+                                         var link = el.querySelector('a');
+                                         if(!link) {
+                                         return;
+                                         }
+                                         var target = link.getAttribute('href');
+                                         if(!target) {
+                                         return;
+                                         }
+                                         el.addEventListener('click', function() {
+                                                             location.href = target;
+                                                             });
+                                         });
+            </script>
+        <a href="sign-in.html" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--white">ADD</a>
+        
+        
+        <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyChG9cMyAkkZSXCZp1OmfpxbJYnJvh3XnQ",
+                authDomain: "online-eff31.firebaseapp.com",
+                databaseURL: "https://online-eff31.firebaseio.com",
+                storageBucket: "online-eff31.appspot.com",
+                messagingSenderId: "655714895872"
+            };
+        var articles = [];
+        firebase.initializeApp(config);
+        
+        var database = firebase.database();
+        var homepageRef = database.ref('categories');
+        homepageRef.on('value', function(snapshot) {
+                       document.getElementById("entries").innerHTML = "";
+                       snapshot.forEach(function(childSnapshot) {
+                                        var childKey = childSnapshot.getKey();
+                                        var childData = childSnapshot.val();
+                                         var homepageRef = database.ref('entries');
+                                         homepageRef.on('value', function(snapshot) {
+                                         document.getElementById("entries").innerHTML = "";
+                                         snapshot.forEach(function(childSnapshot) {
+                                         var childKey = childSnapshot.getKey();
+                                         var childData = childSnapshot.val();
+                                         var user = "SYSTEM";
+                                         var userRef = database.ref('entries/'+ childKey + '/user');
+                                         userRef.on('value', function(snapshot) {
+                                         user = snapshot.val();
+                                         });
+                                         var date = "1509";
+                                         var dateRef = database.ref('entries/'+ childKey + '/date');
+                                         dateRef.on('value', function(snapshot) {
+                                         date = snapshot.val();
+                                         });
+                                         var summary = "This is the home of the St Paul's Juniors institution that is 1509. Here you can view both past 1509 issues and articles, videos and audio files that are exclusive to this website! You can also submit articles you have written to be published here or on the magazine. Finally, there will be online competitions and surveys for you to complete and take part in. Thank you for all your contributions and have a look at the amazing features of the 1509 website!";
+                                         var summaryRef = database.ref('entries/'+ childKey + '/summary');
+                                         summaryRef.on('value', function(snapshot) {
+                                         summary = snapshot.val();
+                                         });
+                                         
+                                         var category = "Other";
+                                         var categoryRef = database.ref('entries/'+ childKey + '/category');
+                                         categoryRef.on('value', function(snapshot) {
+                                         category = snapshot.val();
+                                         });
+                                         
+                                         if (category == getQueryVariable(name)) {
+                                         document.getElementById("entries").innerHTML += `<div class="mdl-card article-template mdl-cell mdl-cell--12-col">
+                                         <div class="mdl-card__media mdl-color-text--grey-50">
+                                         <h3><a href="entries.html?name=` + childKey + `">` + childKey.replace(/%20/g, " ") + `</a></h3>
+                                         </div>
+                                         <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
+                                         ` + summary + `
+                                         </div>
+                                         <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+                                         <div class="minilogo">
+                                         <img width="45" src="images/timothy-langer-circle.png">
+                                         </div>
+                                         <div>
+                                         <strong>` + user + `</strong>
+                                         <span>` + date + `</span>
+                                         </div>
+                                         </div>
+                                         </div>`
+                                        }
+                                        //alert(document.getElementById("entries").innerHTML);
+                                        articles.push(childSnapshot.getKey());
+                                        
+                                        // ...
+                                        });
+                       });
+                       
+                       function getQueryVariable(variable) {
   var query = window.location.search.substring(1);
   var vars = query.split("&");
   for (var i=0;i<vars.length;i++) {
@@ -15,6 +265,23 @@
   } 
   alert('No name specified. Please go back');
 }
-  </script>
-  </body>
+
+            </script>
+    </body>
+    <script>
+        Array.prototype.forEach.call(document.querySelectorAll('.mdl-card__media'), function(el) {
+                                     var link = el.querySelector('a');
+                                     if(!link) {
+                                     return;
+                                     }
+                                     var target = link.getAttribute('href');
+                                     if(!target) {
+                                     return;
+                                     }
+                                     el.addEventListener('click', function() {
+                                                         location.href = target;
+                                                         });
+                                     });
+        </script>
+    <a href="https://github.com/1509-online/1509-online.github.io" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--white">EDIT</a>
 </html>
