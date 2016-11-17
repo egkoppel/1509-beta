@@ -221,7 +221,7 @@ homepageRef.on('value', function(snapshot) {
                      categoryRef.on('value', function(snapshot) {
                                 category = snapshot.val();
                                 });
-		
+		alert(category + getQueryVariable("name"));
 		if (category == getQueryVariable("name")) {
 		document.getElementById("entries").innerHTML += `<div class="mdl-card article-template mdl-cell mdl-cell--12-col">
             <div class="mdl-card__media mdl-color-text--grey-50">
