@@ -221,8 +221,8 @@ homepageRef.on('value', function(snapshot) {
                      categoryRef.on('value', function(snapshot) {
                                 category = snapshot.val();
                                 });
-		alert(category);
-		if (category == getQueryVariable("name")) {
+		alert(getQueryVariable("name"));
+		/*if (category == getQueryVariable("name")) {
 		document.getElementById("entries").innerHTML += `<div class="mdl-card article-template mdl-cell mdl-cell--12-col">
             <div class="mdl-card__media mdl-color-text--grey-50">
               <h3><a href="entries.html?name=` + childKey + `">` + childKey + `</a></h3>
@@ -233,7 +233,7 @@ homepageRef.on('value', function(snapshot) {
             <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
               ` /*<div class="minilogo">
               	<img width="45" src="images/timothy-langer-circle.png">
-              </div>*/ +
+              </div>*//* +
               `<div>
                 <strong>` + user + `</strong>
                 <span>` + date + `</span>
@@ -243,7 +243,7 @@ homepageRef.on('value', function(snapshot) {
 		
 		//alert(document.getElementById("entries").innerHTML);
 		articles.push(childSnapshot.getKey());
-		}
+		}*/
 		
     // ...
   });
