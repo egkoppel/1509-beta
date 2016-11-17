@@ -181,6 +181,20 @@
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
     <script>
+	    
+	    function getQueryVariable(variable) {
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+    if (pair[0] == variable) {
+	    var returnValue = pair[1].replace(/%20/g," ");
+      return returnValue;
+    }
+  } 
+  alert('No category specified. Please go back');
+}
+	    
       // Initialize Firebase
       var config = {
         apiKey: "AIzaSyChG9cMyAkkZSXCZp1OmfpxbJYnJvh3XnQ",
@@ -249,18 +263,7 @@ homepageRef.on('value', function(snapshot) {
   });
 });
 
-	    function getQueryVariable(variable) {
-  var query = window.location.search.substring(1);
-  var vars = query.split("&");
-  for (var i=0;i<vars.length;i++) {
-    var pair = vars[i].split("=");
-    if (pair[0] == variable) {
-	    var returnValue = pair[1].replace(/%20/g," ");
-      return returnValue;
-    }
-  } 
-  alert('No category specified. Please go back');
-}
+	    
 	    
 </script>
   </body>
