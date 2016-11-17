@@ -227,7 +227,7 @@
                                          category = snapshot.val();
                                          });
                                          
-                                         if (category == getQueryVariable(name)) {
+                                         //if (category == getQueryVariable(name)) {
                                          document.getElementById("entries").innerHTML += `<div class="mdl-card article-template mdl-cell mdl-cell--12-col">
                                          <div class="mdl-card__media mdl-color-text--grey-50">
                                          <h3><a href="entries.html?name=` + childKey + `">` + childKey.replace(/%20/g, " ") + `</a></h3>
@@ -248,7 +248,7 @@
                                         
                                         //alert(document.getElementById("entries").innerHTML);
                                         articles.push(childSnapshot.getKey());
-					 }
+					 //}
                                         // ...
                                         });
                        });
