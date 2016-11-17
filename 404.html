@@ -1,0 +1,141 @@
+---
+permalink: /404.html
+---
+<!doctype html>
+<html lang="en"> 
+  <head>
+    <!-- Meta INFO -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.grey-orange.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
+<style>
+.demo-layout-transparent {
+  background: url('#') center / cover;
+}
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+  /* This background is dark, so we set text to white. Use black instead if
+     your background is light. */
+  color: white;
+}
+</style>
+
+<div class="demo-layout-transparent mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header mdl-layout__header--transparent">
+    <div class="mdl-layout__header-row">
+      <!-- TITLE -->
+      <span class="mdl-layout-title">1509 Online</span>
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation -->
+      <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="sign-in.html">Sign in</a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">1509 Online</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="entries.html?name=About">About</a>
+      <a class="mdl-navigation__link" href="mailto:1509editor@stpaulsschool.org.uk">Contact</a>
+      <a class="mdl-navigation__link" href="sign-in.html">Log in</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+  </main>
+</div>
+    <!-- TITLE + DESC -->
+    <title>1509 Online</title>
+    <meta name="description" content="The St Pauls Juniors' 1509 magazine is now online!">
+  </head>
+  <body>
+
+    <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
+      <main class="mdl-layout__content">
+        <div class="demo-blog__posts mdl-grid">
+          <div class="mdl-card welcome mdl-cell mdl-cell--8-col">
+            <div class="mdl-card__media mdl-color-text--grey-50">
+              <h3>404 Error</h3>
+            </div>
+            <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+              <div>
+                <strong>The page you were looking for does not exist<!--<a href="example.html" target="popup" onclick="window.open('example.html', 'popup', 'width=640,height=480'); return false">Test</a>--></strong>
+              </div>
+            </div>
+          </div>
+          <div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
+            <div class="mdl-card__media mdl-color--white mdl-color-text--grey-600">
+              <img src="images/sps-logo.png">
+              The SPJ Pupils' magazine
+            </div>
+            <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
+              <div>
+                <strong>1509 Editors</strong>
+              </div>
+              <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="menubtn">
+                <li class="mdl-menu__item" href="about_editor.html">About</li>
+                <li class="mdl-menu__item" href="mailto=1509editor@stpaulsschool.org.uk">Contact</li>
+              </ul>
+              <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class="material-icons" role="presentation">more_vert</i>
+                <span class="visuallyhidden">Show Menu</span>
+              </button>
+            </div>
+          </div>
+
+          <nav class="demo-nav mdl-cell mdl-cell--12-col">
+            <div class="section-spacer"></div>
+          </nav>
+        </div>
+	      
+        <!-- <footer class="mdl-mini-footer">
+
+          Use The drawer contact and share function instead, this is in case we wish to revert
+
+	  <div class="mdl-mini-footer--left-section">
+            <button class="mdl-mini-footer--social-btn social-btn__share">
+              <i class="material-icons" role="presentation" id="tt2">share</i>
+              <span class="visuallyhidden">share</span>
+              <div class="mdl-tooltip" for="tt2">Share</div>
+            </button>
+          </div> -->
+		
+        <!--</footer>-->
+      </main>
+      <div class="mdl-layout__obfuscator"></div>
+    </div>
+    <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+  
+  </body>
+  <script>
+    Array.prototype.forEach.call(document.querySelectorAll('.mdl-card__media'), function(el) {
+      var link = el.querySelector('a');
+      if(!link) {
+        return;
+      }
+      var target = link.getAttribute('href');
+      if(!target) {
+        return;
+      }
+      el.addEventListener('click', function() {
+        location.href = target;
+      });
+    });
+  </script>
+  <a href="https://github.com/1509-online/1509-online.github.io" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--white">EDIT</a>
+</html>
