@@ -3,7 +3,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.grey-orange.min.css">
     <link rel="stylesheet" href="styles.css">
-<title>Edit</title>
+<title>Edit Dashboard</title>
 <style>
     ul.tab {
         list-style-type: none;
@@ -48,10 +48,11 @@ ul.tab li a:focus, .active {background-color: #ccc;}
           <i class="material-icons">account_circle</i>Sign out
         </button><br>
     <ul class="tab">
-        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Edit')">Create</a></li>
+        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Edit')">New Article</a></li>
         <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Help')">Help</a></li>
     </ul>
-    
+    <div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
+        <div class="mdl-card__media mdl-color--white mdl-color-text--grey-600">
     <div id="Edit" class="tabcontent">
         <h3>New Article</h3>
         <form action="#">
@@ -96,6 +97,7 @@ ul.tab li a:focus, .active {background-color: #ccc;}
         </button><br>
     <p id="preview"></p>
     </div>
+            </div>
     
     <div id="Help" class="tabcontent">
         <h3>Help</h3>
