@@ -52,13 +52,44 @@ ul.tab li a:focus, .active {background-color: #ccc;}
     </ul>
     
     <div id="Edit" class="tabcontent">
-        <h3>Create</h3>
-    <input id="title" placeholder="Title"/><br>
-    <input id="user" placeholder="Name"/><br>
-    <input id="date" placeholder="Date"/><br>
-    <input id="image" placeholder="Link to image (at least 820 pixles in width)"/><br>
-    <input id="summary" placeholder="Summary"/><br>
-    <textarea id="code" onchange="preview()" placeholder="Article"></textarea><br>
+        <h3>New Article</h3>
+        <form action="#">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="title">
+    <label class="mdl-textfield__label" for="title">Title</label>
+  </div>
+</form>
+        <form action="#">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="user" pattern="[A-Z,a-z, ]*">
+    <label class="mdl-textfield__label" for="user">Author Name</label>
+  </div>
+</form>
+        <form action="#">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" pattern="[0-9,\]*" id="date">
+    <label class="mdl-textfield__label" for="date">Date</label>
+    <span class="mdl-textfield__error">That is not a valid date!</span>
+  </div>
+</form>
+        <form action="#">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="image">
+    <label class="mdl-textfield__label" for="image">Image URL (at least 820 pixels in width)</label>
+  </div>
+</form>
+        <form action="#">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="summary">
+    <label class="mdl-textfield__label" for="summary">Summary AND/OR Description</label>
+  </div>
+</form>
+<form action="#">
+  <div class="mdl-textfield mdl-js-textfield">
+    <textarea class="mdl-textfield__input" type="text" rows="10" id="code" onchange="preview()"></textarea>
+    <label class="mdl-textfield__label" for="code">Article Text</label>
+  </div>
+</form>
     <button id="publish" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
           <i class="material-icons">check</i>Publish
         </button><br>
