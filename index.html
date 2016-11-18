@@ -193,7 +193,7 @@
       firebase.initializeApp(config);
 	    
 	    var database = firebase.database();
-      var homepageRef = database.ref('categories');
+      var homepageRef = database.ref('entries');
 homepageRef.on('value', function(snapshot) {
                document.getElementById("entries").innerHTML = "";
 	snapshot.forEach(function(childSnapshot) {
