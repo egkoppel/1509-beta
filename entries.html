@@ -112,24 +112,24 @@
 	    
 var name = getQueryVariable("name");
 var category = getQueryVariable("category");
-	var titleRef = database.ref('entries/' + category + name);
+	var titleRef = database.ref('entries/' + category + "/" + name);
 titleRef.on('value', function(snapshot) {
   document.getElementById("title").innerHTML = snapshot.getKey();
 });
-	    var bodyRef = database.ref('entries/'+ category + name + '/body');
+	    var bodyRef = database.ref('entries/'+ category + "/" + name + '/body');
 bodyRef.on('value', function(snapshot) {
   document.getElementById("body").innerHTML = snapshot.val();
 });
-	    var userRef = database.ref('entries/'+ category + name + '/user');
+	    var userRef = database.ref('entries/'+ category + "/" + name + '/user');
 userRef.on('value', function(snapshot) {
   document.getElementById("user").innerHTML = snapshot.val();
 });
-	    var dateRef = database.ref('entries/'+ category + name + '/date');
+	    var dateRef = database.ref('entries/'+ category + "/" + name + '/date');
 dateRef.on('value', function(snapshot) {
   document.getElementById("date").innerHTML = snapshot.val();
 });
 
-var imageRef = database.ref('entries/'+ category + name + '/image');
+var imageRef = database.ref('entries/'+ category + "/" + name + '/image');
 imageRef.on('value', function(snapshot) {
             document.getElementById("image").style.height = "280px";
             document.getElementById("image").style.backgroundImage = "url(" + snapshot.val() + ")";
