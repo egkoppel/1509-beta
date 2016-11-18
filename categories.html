@@ -220,7 +220,7 @@ var category = getQueryVariable("category");
                                          
                                          document.getElementById("entries").innerHTML += `<div class="mdl-card article-template mdl-cell mdl-cell--12-col">
                                          <div class="mdl-card__media mdl-color-text--grey-50">
-                                         <h3><a href="entries.html?name=` + childKey + `">` + childKey.replace(/%20/g, " ") + `</a></h3>
+                                         <h3><a href="entries.html?name=` + childKey + `&category="` + category + `>` + childKey.replace(/%20/g, " ") + `</a></h3>
                                          </div>
                                          <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
                                          ` + summary + `
