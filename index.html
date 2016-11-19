@@ -204,12 +204,7 @@ homepageRef.on('value', function(snapshot) {
             <div class="mdl-card__media mdl-color-text--grey-50">
               <h3><a href="categories.html?category=` + childKey + `">` + childKey.replace(/%20/g, " ") + `</a></h3>
             </div>
-            <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
-              ` + childData + `
-            </div>
-            <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-              
-            </div>
+            
           </div>`
 	    
 	    /*var database = firebase.database();
@@ -219,7 +214,7 @@ homepageRef.on('value', function(snapshot) {
 	snapshot.forEach(function(childSnapshot) {
     var childKey = childSnapshot.getKey();
     var childData = childSnapshot.val();
-                     var user = "SYSTEM";
+                   var user = "SYSTEM";
                      var userRef = database.ref('entries/'+ childKey + '/user');
                      userRef.on('value', function(snapshot) {
                                 user = snapshot.val();
