@@ -505,7 +505,7 @@ body .demo-blog {
 }
 
 .category {
-    max-width:900px;
+    width:900px;
     margin-right:16px;
     margin-left:16px;
 }
