@@ -118,6 +118,10 @@
         </div>
       </main>
     </div>
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-auth.js"></script>
     <script>
 		//Preview article content method
 		function preview() {
@@ -163,7 +167,7 @@ alert("signed in");
             var image = document.getElementById("image").value;
             //To prevent accidents. I had one and it deleted everything :(
             if (title != "") {
-            var articleRef = firebase.database().ref('entries/' + category + " + title);
+            var articleRef = firebase.database().ref('entries/' + category + "/" + title);
             // An article entry.
             articleRef.set({ body: style(article), user: user, date: date, summary: description, image: image })
             .then(function() {
@@ -207,9 +211,6 @@ alert("signed in");
 
 	</script>
     <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-auth.js"></script>
+	
   </body>
 </html>
