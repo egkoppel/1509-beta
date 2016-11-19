@@ -45,7 +45,7 @@
           <img src="images/user.jpg" class="demo-avatar">
           <div class="mdl-layout-spacer"></div>
           <div class="demo-avatar-dropdown">
-            <span>hello@example.com</span>
+            <span id="email">example@stpaulsschool.org.uk</span>
             <div class="mdl-layout-spacer"></div>
           </div>
         </header>
@@ -100,6 +100,7 @@
         firebase.auth().onAuthStateChanged(function(user) {
 		if (user) {
 			// User is signed in.
+			document.getElementById("email").innerHTML = user.email;
 		} else {
 			// User is not signed in, revert to homepage.
 			window.location = "https://1509-online.github.io/index.html"
