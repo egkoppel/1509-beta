@@ -136,7 +136,8 @@
         /*var provider = new firebase.auth.GoogleAuthProvider();*/
         firebase.auth().onAuthStateChanged(function(user) {
 		if (user) {
-			// User is signed in.
+			// User is signed in
+alert("signed in");
 		} else {
 			// User is not signed in, revert to homepage.
 			window.location = "https://1509-online.github.io/index.html"
