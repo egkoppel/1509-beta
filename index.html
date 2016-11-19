@@ -200,7 +200,7 @@ homepageRef.on('value', function(snapshot) {
     var childKey = childSnapshot.getKey();
     var childData = childSnapshot.val();
                      
-		document.getElementById("entries").innerHTML += `<div class="demo-blog__posts mdl-card article-template mdl-cell mdl-cell--12-col">
+		document.getElementById("entries").innerHTML += `<div class="mdl-card article-template mdl-cell mdl-cell--12-col">
             <div class="mdl-card__media mdl-color-text--grey-50">
               <h3><a href="categories.html?category=` + childKey + `">` + childKey.replace(/%20/g, " ") + `</a></h3>
             </div>
