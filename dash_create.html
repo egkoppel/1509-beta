@@ -68,7 +68,13 @@
 					</div>
 				</form>
 				<hr>
-				<form action="#">
+					<form action="#">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" id="category">
+						<label class="mdl-textfield__label" for="category">Category</label>
+					</div>
+				</form>
+				<hr>				<form action="#">
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						<input class="mdl-textfield__input" type="text" id="user" pattern="[A-Z,a-z, ]*">
 						<label class="mdl-textfield__label" for="user">Author Name</label>
@@ -149,14 +155,14 @@
 		//Publish Method
         document.getElementById("publish").addEventListener("click", function(){
             var title = document.getElementById("title").value;
-            var article = document.getElementById("code").value;
+		var category = document.getElementById("category").value;            var article = document.getElementById("code").value;
             var user = document.getElementById("user").value;
             var date = document.getElementById("date").value;
             var description = document.getElementById("summary").value;
             var image = document.getElementById("image").value;
             //To prevent accidents. I had one and it deleted everything :(
             if (title != "") {
-            var articleRef = firebase.database().ref('entries/' + title);
+            var articleRef = firebase.database().ref('entries/' + category + " + title);
             // An article entry.
             articleRef.set({ body: style(article), user: user, date: date, summary: description, image: image })
             .then(function() {
