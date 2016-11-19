@@ -44,7 +44,7 @@
       </header>
       <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
         <header class="demo-drawer-header">
-          <img src="images/user.jpg" class="demo-avatar">
+          <img id="profile-pic" src="images/user.jpg" class="demo-avatar">
           <div class="demo-avatar-dropdown">
             <span id="email">example@stpaulsschool.org.uk</span>
             <div class="mdl-layout-spacer"></div>
@@ -97,6 +97,7 @@
 		if (user) {
 			// User is signed in.
 			document.getElementById("email").innerHTML = user.email;
+			document.getElementById("profile-pic").src = user.photoURL;
 		} else {
 			// User is not signed in, revert to homepage.
 			window.location = "https://1509-online.github.io/index.html"
