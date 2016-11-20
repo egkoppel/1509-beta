@@ -68,7 +68,7 @@
               <div class="mdl-card__actions mdl-card--border">
                 <a href="dash_faq.html" class="mdl-button mdl-js-button mdl-js-ripple-effect">Get help</a>
                 <a href="dash_create.html" class="mdl-button mdl-js-button mdl-js-ripple-effect">Publish a new article</a>
-				<a id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect">Sign Out</a>
+				<a id="sign-out-button" class="mdl-button mdl-js-button mdl-js-ripple-effect">Sign Out</a>
               </div>
             </div>
             <div class="demo-separator mdl-cell--1-col"></div>
@@ -110,6 +110,15 @@
 		
 		//Sign Out Button
         document.getElementById("sign-out").addEventListener("click", function(){
+        firebase.auth().signOut().then(function() {
+				// Sign-out successful.
+			}, function(error) {
+				// An error happened.
+			});
+        });
+
+//Sign Out Button
+        document.getElementById("sign-out-button").addEventListener("click", function(){
         firebase.auth().signOut().then(function() {
 				// Sign-out successful.
 			}, function(error) {
