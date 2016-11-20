@@ -40,7 +40,7 @@
     <div class="demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
       <main class="mdl-layout__content">
           <div style="position: fixed" class="demo-back">
-              <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="index.html" title="go back" role="button">
+              <a id="back" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="index.html" title="go back" role="button">
                   <i class="material-icons" role="presentation">arrow_back</i>
               </a>
           </div>
@@ -112,6 +112,7 @@
 	    
 var name = getQueryVariable("name");
 var category = getQueryVariable("category");
+document.getElementById("back").href = "categories.html?category=" + category;
 	var titleRef = database.ref('entries/' + category + "/" + name);
 titleRef.on('value', function(snapshot) {
   document.getElementById("title").innerHTML = snapshot.getKey();
