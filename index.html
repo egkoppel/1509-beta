@@ -199,12 +199,14 @@ homepageRef.on('value', function(snapshot) {
 	snapshot.forEach(function(childSnapshot) {
     var childKey = childSnapshot.getKey();
     var childData = childSnapshot.val();
-                     
+                     var summary = childSnapshot.child("summary").val();
 		document.getElementById("entries").innerHTML += `<div class="category mdl-card article-template mdl-cell mdl-cell--12-col">
             <div class="category mdl-card__media mdl-color-text--grey-50">
               <h3><a href="categories.html?category=` + childKey + `">` + childKey.replace(/%20/g, " ") + `</a></h3>
             </div>
-            
+                     <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
+                     ` + summary + `
+                     </div>
           </div>`
 	    
 	    /*var database = firebase.database();
