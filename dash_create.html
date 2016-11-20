@@ -180,7 +180,7 @@ homepageRef.on('value', function(snapshot) {
     var childKey = childSnapshot.getKey();
     var childData = childSnapshot.val();
 		var list = document.getElementById("categories");
-  list.innerHTML += `<li onclick="setCat('` + childSnapshot.getKey() + `');return false;" class="mdl-menu__item">` + childSnapshot.getKey() + `</li>`
+  list.innerHTML = list.innerHTML + `<li onclick="setCat('` + childSnapshot.getKey() + `');return false;" class="mdl-menu__item">` + childSnapshot.getKey() + `</li>`
 		
 		articles.push(childSnapshot.getKey());
 		
