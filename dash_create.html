@@ -169,7 +169,23 @@
 			});
         });
 	    
-	   
+	   document.getElementById("cat1").addEventListener("click", function(){
+         document.getElementById("cat1").setAttribute("disabled");
+ 		    document.getElementById("cat2").removeAttribute("disabled");
+ 		    document.getElementById("cat3").removeAttribute("disabled");
+         });
+ 	    
+ 	    document.getElementById("cat2").addEventListener("click", function(){
+ 		    document.getElementById("cat1").removeAttribute("disabled");
+         document.getElementById("cat2").setAttribute("disabled");
+ 		    document.getElementById("cat3").removeAttribute("disabled");
+         });
+ 	    
+ 	    document.getElementById("cat3").addEventListener("click", function(){
+ 		    document.getElementById("cat1").removeAttribute("disabled");
+ 		    document.getElementById("cat2").removeAttribute("disabled");
+         document.getElementById("cat3").setAttribute("disabled");
+         });
 	
 		
 		//Publish Method
