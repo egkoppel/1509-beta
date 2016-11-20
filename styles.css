@@ -60,6 +60,17 @@ body .demo-blog {
 }
 /* ENDOF iOS Safari specific drawer workaround */
 
+.404-play-card.mdl-card {
+				width: 900px;
+				min-height: 1px;
+			}
+			.404-play-card > .mdl-card__title {
+				color: #fff;
+				background: 
+					url('/images/404play.png');
+					}
+			}
+
 .demo-blog.mdl-layout .mdl-layout__content {
   padding-top: 230px;
   position: relative;
