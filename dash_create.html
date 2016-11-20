@@ -180,9 +180,7 @@ homepageRef.on('value', function(snapshot) {
     var childKey = childSnapshot.getKey();
     var childData = childSnapshot.val();
 		var list = document.getElementById("category");
-  var item = document.createElement("li");
-  item.appendChild(document.createTextNode(childKey.replace(/%20/g, " ")));
-  list.appendChild(item);
+  list.innerHTML += `<li onclick="setCat('` + childSnapshot.getKey() + `');return false;" class="mdl-menu__item">` + childSnapshot.getKey() + `</li>`
 		
 		articles.push(childSnapshot.getKey());
 		
