@@ -64,6 +64,15 @@
           <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
             <h2>Account Settings</h2>
             <a onClick="resetPassword(); return false;" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Password reset</a>
+            
+            <!--<form action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="emailBox" pattern="\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b">
+                        <label class="mdl-textfield__label" for="emailBox">Email</label>
+                        <span class="mdl-textfield__error">That is not a valid email!</span>
+                </div>
+            </form>
+            <a onClick="setEmail(); return false;" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Reset email</a>-->
           </div>
         </div>
       </main>
@@ -118,6 +127,20 @@
                 alert("There was a problem.\nPlease try again");
             });
         }
+    function setEmail() {
+        var auth = firebase.auth();
+        var emailAddress = document.getElementById("emailBox").value;
+        alert(emailAddress);
+        var user = firebase.auth().currentUser;
+        
+        user.updateEmail(emailAddress).then(function() {
+          // Update successful.
+          alert("Set your email to:\n" + emailAddress);
+        }, function(error) {
+          // An error happened.
+          alert("There was a problem");
+        });
+    }
 		//Publish Method
         document.getElementById("publish").addEventListener("click", function(){
             var title = document.getElementById("title").value;
