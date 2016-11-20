@@ -51,6 +51,15 @@ body .demo-blog {
           flex-shrink: 0;
 }
 
+/* START iOS Safari specific drawer workaround */
+.demo-drawer .mdl-menu__container {
+  z-index: -1;
+}
+.demo-drawer .demo-navigation {
+  z-index: -2;
+}
+/* ENDOF iOS Safari specific drawer workaround */
+
 .demo-blog.mdl-layout .mdl-layout__content {
   padding-top: 230px;
   position: relative;
