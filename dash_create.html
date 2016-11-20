@@ -78,7 +78,7 @@
 				<button id="category" class="mdl-button mdl-js-button mdl-js-ripple-effect">
 					Select article category   <i class="material-icons">keyboard_arrow_down</i>
 				</button>
-				<ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect" for="category">
+				<ul id="categories" class="mdl-menu mdl-js-menu mdl-js-ripple-effect" for="category">
 					<li id="cat1" onclick="setCat('cat 1');return false;" class="mdl-menu__item">Article Category #1</li>
 					<li id="cat2" onclick="setCat('cat 2');return false;" class="mdl-menu__item">Article Category #2</li>
 					<li id="cat3" onclick="setCat('cat 3');return false;" class="mdl-menu__item">Article Category #3</li>
@@ -179,7 +179,7 @@ homepageRef.on('value', function(snapshot) {
 	snapshot.forEach(function(childSnapshot) {
     var childKey = childSnapshot.getKey();
     var childData = childSnapshot.val();
-		var list = document.getElementById("category");
+		var list = document.getElementById("categories");
   list.innerHTML += `<li onclick="setCat('` + childSnapshot.getKey() + `');return false;" class="mdl-menu__item">` + childSnapshot.getKey() + `</li>`
 		
 		articles.push(childSnapshot.getKey());
