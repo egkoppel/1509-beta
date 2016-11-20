@@ -198,23 +198,23 @@ var category = getQueryVariable("category");
                                          var childKey = childSnapshot.getKey();
                                          var childData = childSnapshot.val();
                                          var user = "SYSTEM";
-                                         var userRef = database.ref('entries/' + category + childKey + '/user');
+                                         var userRef = database.ref('entries/' + category + "/" + childKey + '/user');
                                          userRef.on('value', function(snapshot) {
                                          user = snapshot.val();
                                          });
                                          var date = "1509";
-                                         var dateRef = database.ref('entries/' + category + childKey + '/date');
+                                         var dateRef = database.ref('entries/' + category + "/" + childKey + '/date');
                                          dateRef.on('value', function(snapshot) {
                                          date = snapshot.val();
                                          });
                                          var summary = "This is the home of the St Paul's Juniors institution that is 1509. Here you can view both past 1509 issues and articles, videos and audio files that are exclusive to this website! You can also submit articles you have written to be published here or on the magazine. Finally, there will be online competitions and surveys for you to complete and take part in. Thank you for all your contributions and have a look at the amazing features of the 1509 website!";
-                                         var summaryRef = database.ref('entries/' + category + childKey + '/summary');
+                                         var summaryRef = database.ref('entries/' + category + "/" + childKey + '/summary');
                                          summaryRef.on('value', function(snapshot) {
                                          summary = snapshot.val();
                                          });
                                          
                                          
-                                         
+                                                          if (childKey != "summary") {
                                          document.getElementById("entries").innerHTML += `<div class="mdl-card article-template mdl-cell mdl-cell--12-col">
                                          <div class="mdl-card__media mdl-color-text--grey-50">
                                          <h3><a href="entries.html?name=` + childKey + `&category=` + category + `">` + childKey.replace(/%20/g, " ") + `</a></h3>
@@ -231,6 +231,7 @@ var category = getQueryVariable("category");
                                         
                                         //alert(document.getElementById("entries").innerHTML);
                                         articles.push(childSnapshot.getKey());
+                                                          }
 					 
                                         // ...
                                         });
