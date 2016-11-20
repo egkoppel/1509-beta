@@ -79,9 +79,9 @@
 					Select article category   <i class="material-icons">keyboard_arrow_down</i>
 				</button>
 				<ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect" for="category">
-					<li class="mdl-menu__item">Article Category #1</li>
-					<li class="mdl-menu__item">Article Category #2</li>
-					<li class="mdl-menu__item">Article Category #3</li>
+					<li id="cat1" class="mdl-menu__item">Article Category #1</li>
+					<li id="cat2" class="mdl-menu__item">Article Category #2</li>
+					<li id="cat3" class="mdl-menu__item">Article Category #3</li>
 				</ul>
 				
 				<hr>				<form action="#">
@@ -133,6 +133,7 @@
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-auth.js"></script>
     <script>
+	    
 		//Preview article content method
 		function preview() {
 			var text = style(document.getElementById("code").value);
@@ -165,6 +166,24 @@
 			}, function(error) {
 				// An error happened.
 			});
+        });
+	    
+	    document.getElementById("cat1").addEventListener("click", function(){
+        document.getElementById("cat1").disabled = true;
+		    document.getElementById("cat2").disabled = false;
+		    document.getElementById("cat3").disabled = false;
+        });
+	    
+	    document.getElementById("cat2").addEventListener("click", function(){
+		    document.getElementById("cat1").disabled = false;
+        document.getElementById("cat2").disabled = true;
+		    document.getElementById("cat3").disabled = false;
+        });
+	    
+	    document.getElementById("cat3").addEventListener("click", function(){
+		    document.getElementById("cat1").disabled = false;
+		    document.getElementById("cat2").disabled = false;
+        document.getElementById("cat3").disabled = true;
         });
 		
 		//Publish Method
