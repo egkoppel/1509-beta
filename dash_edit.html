@@ -172,7 +172,7 @@
 			});
         });
 	    function setCat(name) {
-		   document.getElementById("category").innerHTML = name + `   <i class="material-icons">keyboard_arrow_down</i>`;
+		   document.getElementById("category").innerHTML = name.replace(/%20/g," ") + `   <i class="material-icons">keyboard_arrow_down</i>`;
 		    var database = firebase.database();
       var homepageRef = database.ref('entries/' + name);
 homepageRef.on('value', function(snapshot) {
@@ -182,7 +182,7 @@ homepageRef.on('value', function(snapshot) {
     var childData = childSnapshot.val();
 		var list = document.getElementById("titles");
 		if (childSnapshot.getKey() != "summary") {
-  list.innerHTML += `<li class="mdl-menu__item">` + childSnapshot.getKey() + `</li>`
+  list.innerHTML += `<li class="mdl-menu__item" onclick="setTitle('` + childSnapshot.getKey().replace(/%20/g," ") + `');return false;" >` + childSnapshot.getKey() + `</li>`
 		}
 		
     // ...
@@ -212,7 +212,7 @@ homepageRef.on('value', function(snapshot) {
 		
 		//Publish Method
         document.getElementById("publish").addEventListener("click", function(){
-            var title = document.getElementById("title").value;
+            var title = document.getElementById("title").innerHTML.replace(`   <i class="material-icons">keyboard_arrow_down</i>`,'');
 	    var article = document.getElementById("code").value;
             var user = document.getElementById("user").value;
             var date = document.getElementById("date").value;
