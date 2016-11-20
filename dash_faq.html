@@ -76,7 +76,7 @@
 		  <hr>
 		  <p>For numbered lists put the number then . at the start. Example:<br>1. This will be a numbered list item <br>Will come out like this:<br></p><ol><li>This will be a numbered list item</li></ol>
 		  <hr>
-		  <p>For embedding images use ![Description](full image url) to insert an image. Example:<br>![John Colet Statue](https://1509-online.github.io/images/bg_1024.jpg)<br>Will come out like this:<br></p><img src="https://1509-online.github.io/images/bg_1024.jpg"/>
+		  <p>For embedding images use ![Description](full image url) to insert an image. Please note that underscores in the URL do not work. Example:<br>![John Colet Statue](https://1509-online.github.io/images/bg_1024.jpg)<br>Will come out like this:<br></p><img src="https://1509-online.github.io/images/bg_1024.jpg"/>
 		  <hr>
 		  <p>For adding quotes insert > before the quote. Example:<br>> A quote<br>Will come out like this:<br></p><blockquote>A quote</blockquote>
 		  <hr>
@@ -161,24 +161,7 @@
             }
 		});
 		
-		//Style text function for non-code editors and publishers
-		function style(text) {
-			//Newline \n
-			returnText = text.replace(/\n/g,"<br>");
-			//Header <h2> # ##
-			returnText = returnText.replace(/##/g,"</h2>");
-			returnText = returnText.replace(/#/g,"<h2>");
-			//Italics <i> *** ****
-			returnText = returnText.replace(/\*\*\*\*/g,"</i>");
-			returnText = returnText.replace(/\*\*\*/g,"<i>");
-			//Bold <b> * **
-			returnText = returnText.replace(/\*\*/g,"</b>");
-			returnText = returnText.replace(/\*/g,"<b>");
-			//Underline <u> _ __
-			returnText = returnText.replace(/__/g,"</u>");
-			returnText = returnText.replace(/_/g,"<u>");
-			return returnText;
-		}
+		
 
 	</script>
     <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
