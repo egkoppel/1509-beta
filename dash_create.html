@@ -173,7 +173,22 @@
 		   document.getElementById("category").innerHTML = name + `   <i class="material-icons">keyboard_arrow_down</i>`;
 	    }
 	   
-	
+	var database = firebase.database();
+      var homepageRef = database.ref('entries');
+homepageRef.on('value', function(snapshot) {
+	snapshot.forEach(function(childSnapshot) {
+    var childKey = childSnapshot.getKey();
+    var childData = childSnapshot.val();
+		var list = document.getElementById("category");
+  var item = document.createElement("li");
+  item.appendChild(document.createTextNode(childKey.replace(/%20/g, " ")));
+  list.appendChild(item);
+		
+		articles.push(childSnapshot.getKey());
+		
+    // ...
+  });
+});
 		
 		//Publish Method
         document.getElementById("publish").addEventListener("click", function(){
