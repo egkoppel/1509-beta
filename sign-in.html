@@ -1,5 +1,6 @@
-<html>
-<head>
+<!doctype html>
+<html lang="en">
+  <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -15,6 +16,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.cyan-light_blue.min.css">
     <link rel="stylesheet" href="styles-dashboard.css">
+	
+	<title>Sign In</title>
+	<meta name="description" content="Sign into the 1509 Online easy-to-use dashboard">
+
 	<style>
     #view-source {
       position: fixed;
@@ -26,11 +31,8 @@
       z-index: 900;
     }
     </style>
-	
-	<title>Sign In</title>
-	<meta name="description" content="Sign into the 1509 Online easy-to-use dashboard">
-</head>
-<body>
+  </head>
+  <body>
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
 		<div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
 			<h2>Sign in to dashboard</h2>
@@ -49,7 +51,7 @@
 						<label class="mdl-textfield__label" for="password">Password</label>
 					</div>
 				</form>
-				<button id="sign-in-button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+				<button id="sign-in-button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
 					<i class="material-icons">account_circle</i>Sign In
 				</button>
 			</div>
@@ -58,7 +60,7 @@
 			</button>
 		</div>
 	</div>
-<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-auth.js"></script>
