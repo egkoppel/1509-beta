@@ -79,9 +79,9 @@
 					Select article category   <i class="material-icons">keyboard_arrow_down</i>
 				</button>
 				<ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect" for="category">
-					<li id="cat1" class="mdl-menu__item">Article Category #1</li>
-					<li id="cat2" class="mdl-menu__item">Article Category #2</li>
-					<li id="cat3" class="mdl-menu__item">Article Category #3</li>
+					<li id="cat1" onclick="setCat('cat 1');return false;" class="mdl-menu__item">Article Category #1</li>
+					<li id="cat2" onclick="setCat('cat 2');return false;" class="mdl-menu__item">Article Category #2</li>
+					<li id="cat3" onclick="setCat('cat 3');return false;" class="mdl-menu__item">Article Category #3</li>
 				</ul>
 				
 				<hr>				<form action="#">
@@ -169,8 +169,11 @@
 				// An error happened.
 			});
         });
-	    
-	   document.getElementById("cat1").addEventListener("click", function(){
+	    function setCat(name) {
+		alert(name + "\nMeow");
+		   document.getElementById("category").innerHTML = name + `   <i class="material-icons">keyboard_arrow_down</i>`;    
+	    }
+	   /*document.getElementById("cat1").addEventListener("click", function(){
 		   alert("cat 1\nMeow");
 		   document.getElementById("category").innerHTML = `Article Category #1   <i class="material-icons">keyboard_arrow_down</i>`;
          document.getElementById("cat1").setAttribute("disabled","true");
@@ -192,7 +195,7 @@
  		    document.getElementById("cat1").removeAttribute("disabled");
  		    document.getElementById("cat2").removeAttribute("disabled");
          document.getElementById("cat3").setAttribute("disabled","true");
-         });
+         });*/
 	
 		
 		//Publish Method
