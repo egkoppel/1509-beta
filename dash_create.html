@@ -170,45 +170,23 @@
 			});
         });
 	    function setCat(name) {
-		alert(name + "\nMeow");
-		   document.getElementById("category").innerHTML = name + `   <i class="material-icons">keyboard_arrow_down</i>`;    
+		   document.getElementById("category").innerHTML = name + `   <i class="material-icons">keyboard_arrow_down</i>`;
 	    }
-	   /*document.getElementById("cat1").addEventListener("click", function(){
-		   alert("cat 1\nMeow");
-		   document.getElementById("category").innerHTML = `Article Category #1   <i class="material-icons">keyboard_arrow_down</i>`;
-         document.getElementById("cat1").setAttribute("disabled","true");
- 		    document.getElementById("cat2").removeAttribute("disabled");
- 		    document.getElementById("cat3").removeAttribute("disabled");
-         });
- 	    
- 	    document.getElementById("cat2").addEventListener("click", function(){
-		    alert("cat 2\nMeow");
-		    document.getElementById("category").innerHTML = `Article Category #2   <i class="material-icons">keyboard_arrow_down</i>`;
- 		    document.getElementById("cat1").removeAttribute("disabled");
-         document.getElementById("cat2").setAttribute("disabled","true");
- 		    document.getElementById("cat3").removeAttribute("disabled");
-         });
- 	    
- 	    document.getElementById("cat3").addEventListener("click", function(){
-		    alert("cat 3\nMeow");
-		    document.getElementById("category").innerHTML = `Article Category #3   <i class="material-icons">keyboard_arrow_down</i>`;
- 		    document.getElementById("cat1").removeAttribute("disabled");
- 		    document.getElementById("cat2").removeAttribute("disabled");
-         document.getElementById("cat3").setAttribute("disabled","true");
-         });*/
+	   
 	
 		
 		//Publish Method
         document.getElementById("publish").addEventListener("click", function(){
             var title = document.getElementById("title").value;
-		var category = document.getElementById("category").value;            var article = document.getElementById("code").value;
+	    var article = document.getElementById("code").value;
             var user = document.getElementById("user").value;
             var date = document.getElementById("date").value;
             var description = document.getElementById("summary").value;
             var image = document.getElementById("image").value;
+		var cat = document.getElementById("category").innerHTML.replace(`   <i class="material-icons">keyboard_arrow_down</i>`,'');
             //To prevent accidents. I had one and it deleted everything :(
             if (title != "") {
-            var articleRef = firebase.database().ref('entries/' + category + "/" + title);
+            var articleRef = firebase.database().ref('entries/' + cat + "/" + title);
             // An article entry.
             articleRef.set({ body: style(article), user: user, date: date, summary: description, image: image })
             .then(function() {
