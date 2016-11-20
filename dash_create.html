@@ -69,12 +69,21 @@
 					</div>
 				</form>
 				<hr>
-					<form action="#">
+					<!--<form action="#">
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						<input class="mdl-textfield__input" type="text" id="category">
 						<label class="mdl-textfield__label" for="category">Category</label>
 					</div>
-				</form>
+				</form>-->
+				<button id="category" class="mdl-button mdl-js-button mdl-button--icon">
+					Select article category   <i class="material-icons">keyboard_arrow_down</i>
+				</button>
+				<ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect" for="category">
+					<li class="mdl-menu__item">Article Category #1</li>
+					<li class="mdl-menu__item">Article Category #2</li>
+					<li class="mdl-menu__item">Article Category #3</li>
+				</ul>
+				
 				<hr>				<form action="#">
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						<input class="mdl-textfield__input" type="text" id="user" pattern="[A-Z,a-z, ]*">
