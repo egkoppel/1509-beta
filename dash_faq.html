@@ -64,14 +64,24 @@
           <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
             <h2>Article Publishing Help</h2>
             <hr>
-            <p>For headers put # at the start and ## at the end. Example:<br># This will be a header ## <br>Will come out like this:<br></p><h2>This will be a header</h2>
+            <p>For headers put # at the start. The more hashtags the smaller the header (up to 6). Example:<br># This will be a header<br>Will come out like this:<br></p><h1>This will be a header</h1>
             <hr>
-            <p>For bold put * at the start and ** at the end. Example:<br>* This will be bold ** <br>Will come out like this:<br></p><b>This will be bold</b>
+            <p>For bold put ** at the start and ** at the end. Example:<br>**This will be bold** <br>Will come out like this:<br></p><b>This will be bold</b>
             <hr>
-            <p>For italics put *** at the start and **** at the end. Example:<br>*** This will be in italics **** <br>Will come out like this:<br></p><i>This will be in italics</i>
+            <p>For italics put * at the start and * at the end. Example:<br>*This will be in italics* <br>Will come out like this:<br></p><i>This will be in italics</i>
             <hr>
-            <p>For underline put _ at the start and __ (double underscore) at the end. Example:<br>_ This will be underlined __ <br>Will come out like this:<br></p><u>This will be underlined</u>
-            <hr>
+            <p>For bullet point lists put - at the start. Example:<br>- This will be a bullet point <br>Will come out like this:<br></p><ul><li>This will be a bullet point</li></ul>
+		  <hr>
+		  <p>For numbered lists put the number then . at the start. Example:<br>1. This will be a numbered list item <br>Will come out like this:<br></p><ol><li>This will be a numbered list item</li></ol>
+		  <hr>
+	    <p>For sub lists put two spaces before the dash or number. Example:<br>- This will be a bullet point<br>  - This will be a sub bullet point<br>Will come out like this:<br></p><ul><li>This will be a bullet point<ul><li>This will be a sub bullet point</li></ul></li></ul>
+		  <hr>
+		  <p>For embedding images ![Description](full image url). Example:<br>![John Colet Statue](https://1509-online.github.io/images/bg_1024.jpg)<br>Will come out like this:<br></p><img src="https://1509-online.github.io/images/bg_1024.jpg"/>
+		  <hr>
+		  <p>For adding quotes insert > before the quote. Example:<br>> A quote<br>Will come out like this:<br></p><blockquote>A quote</blockquote>
+		  <hr>
+		  <p>For adding code put ` at the start and end of the code. Example:<br>`var hello = "hello"`<br>Will come out like this:<br></p><code>var hello = "hello"</code>
+		  <hr>
             <p>For embedding surveys and competitions, create a form in <a href="http://forms.google.com" target="_blank">Google Forms</a>, then in the top right corner, click send. Then click on the <i class="material-icons">code</i> icon, copy the code at the bottom. In the article where you want the survey to appear type &lt;/p&gt;, then paste in the code and then type &lt;p&gt;</p>
             <hr>
             <a href="dash_create.html" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">OK, Add a new article now</a>
