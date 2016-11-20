@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.cyan-light_blue.min.css">
     <link rel="stylesheet" href="styles-dashboard.css">
-
+<script src="https://cdn.rawgit.com/showdownjs/showdown/1.5.0/dist/showdown.min.js"></script>
     <title>Edit Dashboard</title>
     <meta name="description" content="Easily edit all content on the 1509 Online in this easy-to-use dashboard">
 
@@ -136,12 +136,15 @@
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-auth.js"></script>
     <script>
+        //Markdown
+        var converter = new showdown.Converter();
+        
 	    //Test thing
 	    /*document.getElementById("cat1").removeAttribute("disabled");
 	    document.getElementById("cat1").setAttribute("disabled", "true");*/
 		//Preview article content method
 		function preview() {
-			var text = style(document.getElementById("code").value);
+			var text = converter.makeHtml(document.getElementById("code").value);
 			document.getElementById("preview").innerHTML = text;
 		}
       // Initialize Firebase
@@ -214,7 +217,7 @@ homepageRef.on('value', function(snapshot) {
 		//Publish Method
         document.getElementById("publish").addEventListener("click", function(){
             var title = document.getElementById("title").innerHTML.replace(`   <i class="material-icons">keyboard_arrow_down</i>`,'');
-	    var article = document.getElementById("code").value;
+	    var article = converter.makeHtml(document.getElementById("code").value);
             var user = document.getElementById("user").value;
             var date = document.getElementById("date").value;
             var description = document.getElementById("summary").value;
