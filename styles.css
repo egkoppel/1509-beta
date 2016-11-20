@@ -504,8 +504,11 @@ body .demo-blog {
   box-sizing: border-box;
 }
 
-.category {
-    width:900px;
-    margin-right:16px;
-    margin-left:16px;
+
+.category-back {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    color: white;
+    z-index: 9999;
 }

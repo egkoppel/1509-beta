@@ -45,14 +45,6 @@
                                                 </nav>
                                             </div>
                                         </header>
-                                        <div class="mdl-layout__drawer">
-                                            <span class="mdl-layout-title">1509 Online</span>
-                                            <nav class="mdl-navigation">
-                                                <a class="mdl-navigation__link" href="entries.html?name=About">About</a>
-                                                <a class="mdl-navigation__link" href="mailto:1509editor@stpaulsschool.org.uk">Contact</a>
-                                                <a class="mdl-navigation__link" href="sign-in.html">Log in</a>
-                                            </nav>
-                                        </div>
                                         <main class="mdl-layout__content">
                                         </main>
                                     </div>
@@ -61,9 +53,14 @@
                                     <meta name="description" content="The St Pauls Juniors' 1509 magazine is now online!">
                                         </head>
     <body>
-        
+        <div style="position: fixed" class="demo-back">
+            <a style="color: #ffffff;top:16px;left:16px;" id="back" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="index.html" title="go back" role="button">
+                <i class="material-icons" role="presentation">arrow_back</i>
+            </a>
+        </div>
         <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
             <main class="mdl-layout__content">
+                
                 <div class="demo-blog__posts mdl-grid">
                     <div class="mdl-card welcome mdl-cell mdl-cell--8-col">
                         <div class="mdl-card__media mdl-color-text--grey-50">
@@ -226,10 +223,6 @@ var category = getQueryVariable("category");
                                          ` + summary + `
                                          </div>
                                          <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-                                         <div class="minilogo">
-                                         <img width="45" src="images/timothy-langer-circle.png">
-
-                                         <div>
                                          <strong>` + user + `</strong>
                                          <span>` + date + `</span>
                                          </div>
