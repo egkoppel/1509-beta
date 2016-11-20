@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.cyan-light_blue.min.css">
     <link rel="stylesheet" href="styles-dashboard.css">
 
-    <title>Edit Dashboard</title>
-    <meta name="description" content="Easily edit all content on the 1509 Online in this easy-to-use dashboard">
+    <title>Settings</title>
+    <meta name="description" content="Account settings">
 
     <style>
     #view-source {
@@ -36,15 +36,14 @@
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Dashboard</span>
-          <div class="mdl-layout-spacer">
-			<!--Spacer--> 
-          </div>
+          <span class="mdl-layout-title">Settings</span>
+          <div class="mdl-layout-spacer"></div>
         </div>
       </header>
       <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
         <header class="demo-drawer-header">
-          <img id="profile-pic" src="images/user.jpg" class="demo-avatar">
+          <img src="images/user.jpg" class="demo-avatar">
+          <div class="mdl-layout-spacer"></div>
           <div class="demo-avatar-dropdown">
             <span id="email">example@stpaulsschool.org.uk</span>
             <div class="mdl-layout-spacer"></div>
@@ -61,17 +60,11 @@
       </div>
       <main class="mdl-layout__content mdl-color--grey-100">
         <div class="mdl-grid demo-content">
-<div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
-                <h2>Welcome!</h2>
-                <p>Welcome to the editor's dashboard! Here you can publish new articles, edit articles and get help with publishing articles. Pick an option below or from the sidebar menu.</p><br>
-              <div class="mdl-card__actions mdl-card--border">
-                <a href="dash_faq.html" class="mdl-button mdl-js-button mdl-js-ripple-effect">Get help</a>
-                <a href="dash_create.html" class="mdl-button mdl-js-button mdl-js-ripple-effect">Publish a new article</a>
-				<a id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect">Sign Out</a>
-              </div>
-            </div>
-            <div class="demo-separator mdl-cell--1-col"></div>
+          <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
+            <h2>Account Settings</h2>
+            <a onClick="resetPassword(); return false;" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Password reset</a>
           </div>
+        </div>
       </main>
     </div>
 <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
@@ -98,9 +91,6 @@
 		if (user) {
 			// User is signed in.
 			document.getElementById("email").innerHTML = user.email;
-                                           if (user.photoURL) {
-			document.getElementById("profile-pic").src = user.photoURL;
-                                           }
 		} else {
 			// User is not signed in, revert to homepage.
 			window.location = "https://1509-online.github.io/index.html"
@@ -115,7 +105,18 @@
 				// An error happened.
 			});
         });
-		
+        function resetPassword() {
+            var auth = firebase.auth();
+            var emailAddress = auth.currentUser.email;
+            
+            auth.sendPasswordResetEmail(emailAddress).then(function() {
+                // Email sent.
+                alert("Sent a password reset email");
+            }, function(error) {
+                // An error happened.
+                alert("There was a problem.\nPlease try again");
+            });
+        }
 		//Publish Method
         document.getElementById("publish").addEventListener("click", function(){
             var title = document.getElementById("title").value;
