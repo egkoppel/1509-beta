@@ -172,6 +172,7 @@
 	    
 	   document.getElementById("cat1").addEventListener("click", function(){
 		   alert("cat 1\nMeow");
+		   document.getElementById("category").innerHTML = `Article Category #1   <i class="material-icons">keyboard_arrow_down</i>`;
          document.getElementById("cat1").setAttribute("disabled","true");
  		    document.getElementById("cat2").removeAttribute("disabled");
  		    document.getElementById("cat3").removeAttribute("disabled");
@@ -179,6 +180,7 @@
  	    
  	    document.getElementById("cat2").addEventListener("click", function(){
 		    alert("cat 2\nMeow");
+		    document.getElementById("category").innerHTML = `Article Category #2   <i class="material-icons">keyboard_arrow_down</i>`;
  		    document.getElementById("cat1").removeAttribute("disabled");
          document.getElementById("cat2").setAttribute("disabled","true");
  		    document.getElementById("cat3").removeAttribute("disabled");
@@ -186,6 +188,7 @@
  	    
  	    document.getElementById("cat3").addEventListener("click", function(){
 		    alert("cat 3\nMeow");
+		    document.getElementById("category").innerHTML = `Article Category #3   <i class="material-icons">keyboard_arrow_down</i>`;
  		    document.getElementById("cat1").removeAttribute("disabled");
  		    document.getElementById("cat2").removeAttribute("disabled");
          document.getElementById("cat3").setAttribute("disabled","true");
