@@ -172,7 +172,7 @@
 			});
         });
 	    function setCat(name) {
-		   document.getElementById("titles").innerHTML = name + `   <i class="material-icons">keyboard_arrow_down</i>`;
+		   document.getElementById("category").innerHTML = name + `   <i class="material-icons">keyboard_arrow_down</i>`;
 		    var database = firebase.database();
       var homepageRef = database.ref('entries/' + name);
 homepageRef.on('value', function(snapshot) {
@@ -181,14 +181,24 @@ homepageRef.on('value', function(snapshot) {
     var childKey = childSnapshot.getKey();
     var childData = childSnapshot.val();
 		var list = document.getElementById("titles");
+		if (childSnapshot.getKey() != "summary") {
   list.innerHTML += `<li class="mdl-menu__item">` + childSnapshot.getKey() + `</li>`
-		
+		}
 		
     // ...
   });
 });
 	    }
 	   
+	 function setTitle(name) {
+		   document.getElementById("title").innerHTML = name + `   <i class="material-icons">keyboard_arrow_down</i>`;
+		    
+		
+    // ...
+  });
+});
+	    }   
+	    
 	var database = firebase.database();
       var homepageRef = database.ref('entries');
 homepageRef.on('value', function(snapshot) {
