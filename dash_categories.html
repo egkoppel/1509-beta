@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.cyan-light_blue.min.css">
+    <link rel="stylesheet" href="styles-dashboard.css">
+
+    <title>Settings</title>
+    <meta name="description" content="Account settings">
+
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+      <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Settings</span>
+          <div class="mdl-layout-spacer"></div>
+        </div>
+      </header>
+      <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+        <header class="demo-drawer-header">
+          <img src="images/user.jpg" class="demo-avatar">
+          <div class="mdl-layout-spacer"></div>
+          <div class="demo-avatar-dropdown">
+            <span id="email">loading@stpaulsschool.org.uk</span>
+            <div class="mdl-layout-spacer"></div>
+          </div>
+        </header>
+        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+          <a class="mdl-navigation__link" href="dashboard.html"><i class="mdl-color-text--white material-icons" role="presentation">home</i>Home</a>
+          <a class="mdl-navigation__link" href="dash_create.html"><i class="mdl-color-text--white material-icons" role="presentation">file_upload</i>New Article</a>
+          <a class="mdl-navigation__link" href="dash_edit.html"><i class="mdl-color-text--white material-icons" role="presentation">edit</i>Edit Article</a>
+		  <a class="mdl-navigation__link" href="dash_categories.html"><i class="mdl-color-text--white material-icons role="presentation">folder_open</i>Edit Categories</a>
+          <a class="mdl-navigation__link" href="dash_faq.html"><i class="mdl-color-text--white material-icons" role="presentation">help_outline</i>Help</a>
+          <a class="mdl-navigation__link" href="dash_settings.html"><i class="mdl-color-text--white material-icons" role="presentation">settings</i>Settings</a>
+		  <a class="mdl-navigation__link" id="sign-out"><i class="mdl-color-text--white material-icons" role="presentation">account_circle</i>Sign Out</a>
+          <div class="mdl-layout-spacer"></div>
+        </nav>
+      </div>
+      <main class="mdl-layout__content mdl-color--grey-100">
+        <div class="mdl-grid demo-content">
+          <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
+		    <h2>Edit Categories</h2>
+			<p>Welcome to the editing categories part of the dashboard! Pick an action.</p>
+            <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Add new category</a>
+			<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Edit a category</a>
+			<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Delete a category</a>	
+			<hr>
+			<h5>Creating a new category</h5>
+			<p>Create a new category, easily and simply. First type a name.</p>
+			<form action="#">
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<input class="mdl-textfield__input" type="text" id="new-category-name">
+					<label class="mdl-textfield__label" for="new-category-name">Category Name</label>
+				</div>
+			</form>
+          </div>
+        </div>
+      </main>
+    </div>
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-auth.js"></script>
+	<script>
+		//Preview article content method
+		function preview() {
+			var text = style(document.getElementById("code").value);
+			document.getElementById("preview").innerHTML = text;
+		}
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyChG9cMyAkkZSXCZp1OmfpxbJYnJvh3XnQ",
+        authDomain: "online-eff31.firebaseapp.com",
+        databaseURL: "https://online-eff31.firebaseio.com",
+        storageBucket: "online-eff31.appspot.com",
+        messagingSenderId: "655714895872"
+      };
+      firebase.initializeApp(config);
+        /*var provider = new firebase.auth.GoogleAuthProvider();*/
+        firebase.auth().onAuthStateChanged(function(user) {
+		if (user) {
+			// User is signed in.
+			document.getElementById("email").innerHTML = user.email;
+		} else {
+			// User is not signed in, revert to homepage.
+			window.location = "https://1509-online.github.io/index.html"
+		}
+		});
+		
+		//Sign Out Button
+        document.getElementById("sign-out").addEventListener("click", function(){
+        firebase.auth().signOut().then(function() {
+				// Sign-out successful.
+			}, function(error) {
+				// An error happened.
+			});
+        });
+        
+    function setEmail() {
+        var auth = firebase.auth();
+        var emailAddress = document.getElementById("emailBox").value;
+        alert(emailAddress);
+        var user = firebase.auth().currentUser;
+        
+        user.updateEmail(emailAddress).then(function() {
+          // Update successful.
+          alert("Set your email to:\n" + emailAddress);
+        }, function(error) {
+          // An error happened.
+          alert("There was a problem");
+        });
+    }
+		//Publish Method
+        document.getElementById("publish").addEventListener("click", function(){
+            var title = document.getElementById("title").value;
+            var article = document.getElementById("code").value;
+            var user = document.getElementById("user").value;
+            var date = document.getElementById("date").value;
+            var description = document.getElementById("summary").value;
+            var image = document.getElementById("image").value;
+            //To prevent accidents. I had one and it deleted everything :(
+            if (title != "") {
+            var articleRef = firebase.database().ref('entries/' + title);
+            // An article entry.
+            articleRef.set({ body: style(article), user: user, date: date, summary: description, image: image })
+            .then(function() {
+                  console.log('Synchronization succeeded');
+                  alert("Success");
+                  var title = document.getElementById("title").value = "";
+                  var article = document.getElementById("code").value = "";
+                  var user = document.getElementById("user").value = "";
+                  var date = document.getElementById("date").value = "";
+                  var description = document.getElementById("summary").value = "";
+                  var image = document.getElementById("image").value = "";
+                document.getElementById("preview").innerHTML = "";
+                  })
+                  .catch(function(error) {
+                         console.log('Synchronization failed');
+                         alert(error);
+                    });
+            } else {
+                alert("Add a title");
+            }
+		});
+		
+		//Style text function for non-code editors and publishers
+		function style(text) {
+			//Newline \n
+			returnText = text.replace(/\n/g,"<br>");
+			//Header <h2> # ##
+			returnText = returnText.replace(/##/g,"</h2>");
+			returnText = returnText.replace(/#/g,"<h2>");
+			//Italics <i> *** ****
+			returnText = returnText.replace(/\*\*\*\*/g,"</i>");
+			returnText = returnText.replace(/\*\*\*/g,"<i>");
+			//Bold <b> * **
+			returnText = returnText.replace(/\*\*/g,"</b>");
+			returnText = returnText.replace(/\*/g,"<b>");
+			//Underline <u> _ __
+			returnText = returnText.replace(/__/g,"</u>");
+			returnText = returnText.replace(/_/g,"<u>");
+			return returnText;
+		}
+
+	</script>
+    <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+	
+  </body>
+</html>
