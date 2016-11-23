@@ -46,6 +46,24 @@
       <a href="#delete" class="mdl-layout__tab">Delete</a>
     </div>
   </header>
+	    <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+        <header class="demo-drawer-header">
+          <img src="images/user.jpg" class="demo-avatar">
+          <div class="demo-avatar-dropdown">
+            <span id="email">example@stpaulsschool.org.uk</span>>
+            <div class="mdl-layout-spacer"></div>
+          </div>
+        </header>
+        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+          <a class="mdl-navigation__link" href="dashboard.html"><i class="mdl-color-text--white material-icons" role="presentation">home</i>Home</a>
+          <a class="mdl-navigation__link" href="dash_create.html"><i class="mdl-color-text--white material-icons" role="presentation">file_upload</i>New Article</a>
+          <a class="mdl-navigation__link" href="dash_edit.html"><i class="mdl-color-text--white material-icons" role="presentation">edit</i>Edit Article</a>
+          <a class="mdl-navigation__link" href="dash_faq.html"><i class="mdl-color-text--white material-icons" role="presentation">help_outline</i>Help</a>
+          <a class="mdl-navigation__link" href="dash_settings.html"><i class="mdl-color-text--white material-icons" role="presentation">settings</i>Settings</a>
+		  <a class="mdl-navigation__link" id="sign-out"><i class="mdl-color-text--white material-icons" role="presentation">account_circle</i>Sign Out</a>
+          <div class="mdl-layout-spacer"></div>
+        </nav>
+      </div>
   <main class="mdl-layout__content">
     <section class="mdl-layout__tab-panel is-active" id="add">
       <div class="page-content"><!-- Your content goes here -->
@@ -137,24 +155,7 @@
       <div class="page-content"><!-- Your content goes here --></div>
     </section>
   </main>
-      <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
-        <header class="demo-drawer-header">
-          <img src="images/user.jpg" class="demo-avatar">
-          <div class="demo-avatar-dropdown">
-            <span id="email">example@stpaulsschool.org.uk</span>>
-            <div class="mdl-layout-spacer"></div>
-          </div>
-        </header>
-        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-          <a class="mdl-navigation__link" href="dashboard.html"><i class="mdl-color-text--white material-icons" role="presentation">home</i>Home</a>
-          <a class="mdl-navigation__link" href="dash_create.html"><i class="mdl-color-text--white material-icons" role="presentation">file_upload</i>New Article</a>
-          <a class="mdl-navigation__link" href="dash_edit.html"><i class="mdl-color-text--white material-icons" role="presentation">edit</i>Edit Article</a>
-          <a class="mdl-navigation__link" href="dash_faq.html"><i class="mdl-color-text--white material-icons" role="presentation">help_outline</i>Help</a>
-          <a class="mdl-navigation__link" href="dash_settings.html"><i class="mdl-color-text--white material-icons" role="presentation">settings</i>Settings</a>
-		  <a class="mdl-navigation__link" id="sign-out"><i class="mdl-color-text--white material-icons" role="presentation">account_circle</i>Sign Out</a>
-          <div class="mdl-layout-spacer"></div>
-        </nav>
-      </div>
+      
       
     </div>
 <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
