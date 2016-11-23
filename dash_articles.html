@@ -140,20 +140,85 @@
 	    </div>
     </section>
     <section class="mdl-layout__tab-panel" id="edit">
-      <div class="page-content"><!-- Your content goes here --></div>
+      <div class="page-content"><!-- Your content goes here -->
+	    <main class="mdl-layout__content mdl-color--grey-100">
+        <div class="mdl-grid demo-content">
+			<div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
+				<h2>Edit Article</h2>
+				<br>
+					<!--<form action="#">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" id="category">
+						<label class="mdl-textfield__label" for="category">Category</label>
+					</div>
+				</form>-->
+				<button id="category-edit" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+					Select article category   <i class="material-icons">keyboard_arrow_down</i>
+				</button>
+				<ul id="categories-edit" class="mdl-menu mdl-js-menu mdl-js-ripple-effect" for="category-edit">
+					<!--<li id="cat1" onclick="setCat('cat 1');return false;" class="mdl-menu__item">Article Category #1</li>
+					<li id="cat2" onclick="setCat('cat 2');return false;" class="mdl-menu__item">Article Category #2</li>
+					<li id="cat3" onclick="setCat('cat 3');return false;" class="mdl-menu__item">Article Category #3</li>-->
+				</ul>
+				
+				<hr><button id="title-edit" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+					Select article title   <i class="material-icons">keyboard_arrow_down</i>
+				</button>
+				<ul id="titles" class="mdl-menu mdl-js-menu mdl-js-ripple-effect" for="title-edit">
+					<!--<li id="cat1" onclick="setCat('cat 1');return false;" class="mdl-menu__item">Article Category #1</li>
+					<li id="cat2" onclick="setCat('cat 2');return false;" class="mdl-menu__item">Article Category #2</li>
+					<li id="cat3" onclick="setCat('cat 3');return false;" class="mdl-menu__item">Article Category #3</li>-->
+				</ul>
+				
+				<hr>				<form action="#">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" id="user-edit" pattern="[A-Z,a-z, ]*">
+						<label class="mdl-textfield__label" for="user-edit">Author Name</label>
+					</div>
+				</form>
+				<hr>
+				<form action="#">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" pattern="[0-9,/]*" id="date-edit">
+						<label class="mdl-textfield__label" for="date-edit">Date</label>
+						<span class="mdl-textfield__error">That is not a valid date!</span>
+					</div>
+				</form>
+				<hr>
+				<form action="#">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" id="image-edit">
+						<label class="mdl-textfield__label" for="image-edit">Image URL (at least 820 pixels in width)</label>
+					</div>
+				</form>
+				<hr>
+				<form action="#">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" id="summary-edit">
+						<label class="mdl-textfield__label" for="summary-edit">Summary AND/OR Description</label>
+					</div>
+				</form>
+				<hr>
+				<form action="#">
+					<div class="mdl-textfield mdl-js-textfield">
+						<textarea class="mdl-textfield__input" type="text" rows="10" id="code-edit" onchange="preview()"></textarea>
+						<label class="mdl-textfield__label" for="code-edit">Article Text</label>
+					</div>
+				</form>
+				<hr>
+				<p id="preview-edit"></p>
+				<a id="publish-edit" class="mdl-button mdl-js-button mdl-js-ripple-effect"><i class="material-icons">check</i>   Done, publish article</a>
+			</div>
+		</div>
+    </div>
+        </div>
+      </main>
+	    </div>
     </section>
     <section class="mdl-layout__tab-panel" id="delete">
       <div class="page-content"><!-- Your content goes here --></div>
     </section>
-    <section class="mdl-layout__tab-panel" id="scroll-tab-4">
-      <div class="page-content"><!-- Your content goes here --></div>
-    </section>
-    <section class="mdl-layout__tab-panel" id="scroll-tab-5">
-      <div class="page-content"><!-- Your content goes here --></div>
-    </section>
-    <section class="mdl-layout__tab-panel" id="scroll-tab-6">
-      <div class="page-content"><!-- Your content goes here --></div>
-    </section>
+    
   </main>
       
       
@@ -273,7 +338,80 @@ homepageRef.on('value', function(snapshot) {
 			returnText = returnText.replace(/_/g,"<u>");
 			return returnText;
 		}
-
+function setCatEdit(name) {
+		   document.getElementById("category-edit").innerHTML = name.replace(/%20/g," ") + `   <i class="material-icons">keyboard_arrow_down</i>`;
+		    var database = firebase.database();
+      var homepageRef = database.ref('entries/' + name);
+homepageRef.on('value', function(snapshot) {
+	document.getElementById("titles-edit").innerHTML = "";
+	snapshot.forEach(function(childSnapshot) {
+    var childKey = childSnapshot.getKey();
+    var childData = childSnapshot.val();
+		var list = document.getElementById("titles-edit");
+		if (childSnapshot.getKey() != "summary") {
+  list.innerHTML += `<li class="mdl-menu__item" onclick="setTitleEdit('` + childSnapshot.getKey().replace(/%20/g," ") + `');return false;" >` + childSnapshot.getKey() + `</li>`
+		}
+		
+    // ...
+  });
+});
+	    }
+	   
+	 function setTitleEdit(name) {
+		   document.getElementById("title-edit").innerHTML = name + `   <i class="material-icons">keyboard_arrow_down</i>`;
+		    
+	    }   
+	    
+	var database = firebase.database();
+      var homepageRef = database.ref('entries');
+homepageRef.on('value', function(snapshot) {
+	document.getElementById("categories-edit").innerHTML = "";
+	snapshot.forEach(function(childSnapshot) {
+    var childKey = childSnapshot.getKey();
+    var childData = childSnapshot.val();
+		var list = document.getElementById("categories-edit");
+  list.innerHTML += `<li onclick="setCatEdit('` + childSnapshot.getKey() + `');return false;" class="mdl-menu__item">` + childSnapshot.getKey() + `</li>`
+		
+		
+    // ...
+  });
+});
+		
+		//Publish Method
+        document.getElementById("publish-edit").addEventListener("click", function(){
+            var title = document.getElementById("title-edit").innerHTML.replace(`   <i class="material-icons">keyboard_arrow_down</i>`,'');
+	    var article = converter.makeHtml(document.getElementById("code-edit").value);
+            var user = document.getElementById("user-edit").value;
+            var date = document.getElementById("date-edit").value;
+            var description = document.getElementById("summary-edit").value;
+            var image = document.getElementById("image-edit").value;
+		var cat = document.getElementById("category-edit").innerHTML.replace(`   <i class="material-icons">keyboard_arrow_down</i>`,'');
+            //To prevent accidents. I had one and it deleted everything :(
+            if (title != "") {
+            var articleRef = firebase.database().ref('entries/' + cat + "/" + title);
+            // An article entry.
+            articleRef.set({ body: article, user: user, date: date, summary: description, image: image })
+            .then(function() {
+                  console.log('Synchronization succeeded');
+                  alert("Success");
+                  var title = document.getElementById("title-edit").value = "";
+                  var article = document.getElementById("code-edit").value = "";
+                  var user = document.getElementById("user-edit").value = "";
+                  var date = document.getElementById("date-edit").value = "";
+                  var description = document.getElementById("summary-edit").value = "";
+                  var image = document.getElementById("image-edit").value = "";
+                document.getElementById("preview-edit").innerHTML = "";
+                  })
+                  .catch(function(error) {
+                         console.log('Synchronization failed');
+                         alert(error);
+                    });
+            } else {
+                alert("Add a title");
+            }
+		});
+		
+		
 	</script>
     <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
 	
