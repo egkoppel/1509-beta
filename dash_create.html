@@ -41,56 +41,18 @@
           <div class="mdl-layout-spacer"></div>
         </div>      <!-- Tabs -->
     <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-      <a href="#scroll-tab-1" class="mdl-layout__tab is-active">Tab 1</a>
-      <a href="#scroll-tab-2" class="mdl-layout__tab">Tab 2</a>
-      <a href="#scroll-tab-3" class="mdl-layout__tab">Tab 3</a>
-      <a href="#scroll-tab-4" class="mdl-layout__tab">Tab 4</a>
-      <a href="#scroll-tab-5" class="mdl-layout__tab">Tab 5</a>
-      <a href="#scroll-tab-6" class="mdl-layout__tab">Tab 6</a>
+      <a href="#add" class="mdl-layout__tab is-active">Publish</a>
+      <a href="#edit" class="mdl-layout__tab">Edit</a>
+      <a href="#delete" class="mdl-layout__tab">Delete</a>
     </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Title</span>
   </div>
   <main class="mdl-layout__content">
-    <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
-      <div class="page-content"><!-- Your content goes here --></div>
-    </section>
-    <section class="mdl-layout__tab-panel" id="scroll-tab-2">
-      <div class="page-content"><!-- Your content goes here --></div>
-    </section>
-    <section class="mdl-layout__tab-panel" id="scroll-tab-3">
-      <div class="page-content"><!-- Your content goes here --></div>
-    </section>
-    <section class="mdl-layout__tab-panel" id="scroll-tab-4">
-      <div class="page-content"><!-- Your content goes here --></div>
-    </section>
-    <section class="mdl-layout__tab-panel" id="scroll-tab-5">
-      <div class="page-content"><!-- Your content goes here --></div>
-    </section>
-    <section class="mdl-layout__tab-panel" id="scroll-tab-6">
-      <div class="page-content"><!-- Your content goes here --></div>
-    </section>
-  </main>
-      <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
-        <header class="demo-drawer-header">
-          <img src="images/user.jpg" class="demo-avatar">
-          <div class="demo-avatar-dropdown">
-            <span id="email">example@stpaulsschool.org.uk</span>>
-            <div class="mdl-layout-spacer"></div>
-          </div>
-        </header>
-        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-          <a class="mdl-navigation__link" href="dashboard.html"><i class="mdl-color-text--white material-icons" role="presentation">home</i>Home</a>
-          <a class="mdl-navigation__link" href="dash_create.html"><i class="mdl-color-text--white material-icons" role="presentation">file_upload</i>New Article</a>
-          <a class="mdl-navigation__link" href="dash_edit.html"><i class="mdl-color-text--white material-icons" role="presentation">edit</i>Edit Article</a>
-          <a class="mdl-navigation__link" href="dash_faq.html"><i class="mdl-color-text--white material-icons" role="presentation">help_outline</i>Help</a>
-          <a class="mdl-navigation__link" href="dash_settings.html"><i class="mdl-color-text--white material-icons" role="presentation">settings</i>Settings</a>
-		  <a class="mdl-navigation__link" id="sign-out"><i class="mdl-color-text--white material-icons" role="presentation">account_circle</i>Sign Out</a>
-          <div class="mdl-layout-spacer"></div>
-        </nav>
-      </div>
-      <main class="mdl-layout__content mdl-color--grey-100">
+    <section class="mdl-layout__tab-panel is-active" id="add">
+      <div class="page-content"><!-- Your content goes here -->
+	    <main class="mdl-layout__content mdl-color--grey-100">
         <div class="mdl-grid demo-content">
 			<div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
 				<h2>Publish Article</h2>
@@ -160,6 +122,43 @@
     </div>
         </div>
       </main>
+	    </div>
+    </section>
+    <section class="mdl-layout__tab-panel" id="edit">
+      <div class="page-content"><!-- Your content goes here --></div>
+    </section>
+    <section class="mdl-layout__tab-panel" id="delete">
+      <div class="page-content"><!-- Your content goes here --></div>
+    </section>
+    <section class="mdl-layout__tab-panel" id="scroll-tab-4">
+      <div class="page-content"><!-- Your content goes here --></div>
+    </section>
+    <section class="mdl-layout__tab-panel" id="scroll-tab-5">
+      <div class="page-content"><!-- Your content goes here --></div>
+    </section>
+    <section class="mdl-layout__tab-panel" id="scroll-tab-6">
+      <div class="page-content"><!-- Your content goes here --></div>
+    </section>
+  </main>
+      <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+        <header class="demo-drawer-header">
+          <img src="images/user.jpg" class="demo-avatar">
+          <div class="demo-avatar-dropdown">
+            <span id="email">example@stpaulsschool.org.uk</span>>
+            <div class="mdl-layout-spacer"></div>
+          </div>
+        </header>
+        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+          <a class="mdl-navigation__link" href="dashboard.html"><i class="mdl-color-text--white material-icons" role="presentation">home</i>Home</a>
+          <a class="mdl-navigation__link" href="dash_create.html"><i class="mdl-color-text--white material-icons" role="presentation">file_upload</i>New Article</a>
+          <a class="mdl-navigation__link" href="dash_edit.html"><i class="mdl-color-text--white material-icons" role="presentation">edit</i>Edit Article</a>
+          <a class="mdl-navigation__link" href="dash_faq.html"><i class="mdl-color-text--white material-icons" role="presentation">help_outline</i>Help</a>
+          <a class="mdl-navigation__link" href="dash_settings.html"><i class="mdl-color-text--white material-icons" role="presentation">settings</i>Settings</a>
+		  <a class="mdl-navigation__link" id="sign-out"><i class="mdl-color-text--white material-icons" role="presentation">account_circle</i>Sign Out</a>
+          <div class="mdl-layout-spacer"></div>
+        </nav>
+      </div>
+      
     </div>
 <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
