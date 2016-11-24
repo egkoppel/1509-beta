@@ -271,8 +271,14 @@
     <p>Deleting the article will remove it remove it forever.</p>
   </div>
   <div class="modal-footer">
+	  <button id="cancel" class="mdl-button mdl-js-button mdl-button--raised delete">
+  Cancel
+</button>
+	  <button id="delete" class="mdl-button mdl-js-button mdl-button--raised delete">
+  Delete
+</button>
      <button type="button" class="mdl-button delete">Delete</button>
-      <button type="button" class="mdl-button close">Cancel</button>
+      <button type="button" class="mdl-button delete">Cancel</button>
   </div>
 </div>
 	    <h2>Delete Article</h2>
@@ -515,10 +521,10 @@ var modal = document.getElementById('myModal');
 var btn = document.getElementById("delete-btn");
 
 // Get the <span> element that closes the modal
-var close = document.getElementsByClassName("close")[0];
+var close = document.getElementById("close");
 	    
 	    // Get the <span> element that closes the modal
-var delete = document.getElementsByClassName("delete")[0];
+var delete = document.getElementById("delete");
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
