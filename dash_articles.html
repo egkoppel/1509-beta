@@ -443,7 +443,7 @@ homepageRef.on('value', function(snapshot) {
 		});
 	    
 		
-			var dialog = document.querySelector('dialog');
+			var dialog = document.getElementById('dialog');
     var showDialogButton = document.getElementById('delete');
     if (! dialog.showModal) {
       dialogPolyfill.registerDialog(dialog);
@@ -454,7 +454,7 @@ homepageRef.on('value', function(snapshot) {
     dialog.querySelector('.close').addEventListener('click', function() {
       dialog.close();
     });
-	    dialog.querySelector('.delete').addEventListener('click', function() {
+	    dialog.querySelector('delete').addEventListener('click', function() {
       dialog.close();
 		    alert('deleting');
     });
