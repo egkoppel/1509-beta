@@ -444,11 +444,10 @@ homepageRef.on('value', function(snapshot) {
 	    
 		
 			var dialog = document.getElementById('dialog');
-    var showDialogButton = document.getElementById('delete');
     if (! dialog.showModal) {
       dialogPolyfill.registerDialog(dialog);
     }
-    showDialogButton.addEventListener('click', function() {
+    document.getElementById("delete").addEventListener("click", function(){
       dialog.showModal();
     });
     dialog.querySelector('.close').addEventListener('click', function() {
