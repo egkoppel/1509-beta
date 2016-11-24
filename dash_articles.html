@@ -208,7 +208,46 @@
     </div>
     </section>
     <section class="mdl-layout__tab-panel" id="delete">
-      <div class="page-content"><!-- Your content goes here --></div>
+      <div class="page-content"><!-- Your content goes here -->
+	    <h2>Delete Article</h2>
+				<br>
+					<!--<form action="#">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" id="category">
+						<label class="mdl-textfield__label" for="category">Category</label>
+					</div>
+				</form>-->
+				<button id="category-delete" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+					Select article category   <i class="material-icons">keyboard_arrow_down</i>
+				</button>
+				<ul id="categories-delete" class="mdl-menu mdl-js-menu mdl-js-ripple-effect" for="category">
+					<!--<li id="cat1" onclick="setCat('cat 1');return false;" class="mdl-menu__item">Article Category #1</li>
+					<li id="cat2" onclick="setCat('cat 2');return false;" class="mdl-menu__item">Article Category #2</li>
+					<li id="cat3" onclick="setCat('cat 3');return false;" class="mdl-menu__item">Article Category #3</li>-->
+				</ul>
+				
+				<hr><button id="title-delete" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+					Select article title   <i class="material-icons">keyboard_arrow_down</i>
+				</button>
+				<ul id="titles-delete" class="mdl-menu mdl-js-menu mdl-js-ripple-effect" for="title">
+					<!--<li id="cat1" onclick="setCat('cat 1');return false;" class="mdl-menu__item">Article Category #1</li>
+					<li id="cat2" onclick="setCat('cat 2');return false;" class="mdl-menu__item">Article Category #2</li>
+					<li id="cat3" onclick="setCat('cat 3');return false;" class="mdl-menu__item">Article Category #3</li>-->
+				</ul>
+	      <a id="delete" class="mdl-button mdl-js-button mdl-js-ripple-effect"><i class="material-icons">delete_forever</i> Delete</a>
+	      <dialog class="mdl-dialog">
+    <h4 class="mdl-dialog__title">Delete Article?</h4>
+    <div class="mdl-dialog__content">
+      <p>
+        Are you sure?
+      </p>
+    </div>
+    <div class="mdl-dialog__actions">
+      <button type="button" class="mdl-button delete">Delete</button>
+      <button type="button" class="mdl-button close">Cancel</button>
+    </div>
+	      </dialog>
+	    </div>
     </section>
     
   </main>
@@ -402,7 +441,23 @@ homepageRef.on('value', function(snapshot) {
                 alert("Add a title");
             }
 		});
+	    
 		
+			var dialog = document.querySelector('dialog');
+    var showDialogButton = document.getElementById('delete');
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    showDialogButton.addEventListener('click', function() {
+      dialog.showModal();
+    });
+    dialog.querySelector('.close').addEventListener('click', function() {
+      dialog.close();
+    });
+	    dialog.querySelector('.delete').addEventListener('click', function() {
+      dialog.close();
+		    alert('deleting');
+    });
 		
 	</script>
     <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
