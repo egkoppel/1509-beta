@@ -300,7 +300,7 @@
 					<li id="cat2" onclick="setCat('cat 2');return false;" class="mdl-menu__item">Article Category #2</li>
 					<li id="cat3" onclick="setCat('cat 3');return false;" class="mdl-menu__item">Article Category #3</li>-->
 				</ul>
-	      <a id="delete" class="mdl-button mdl-js-button mdl-js-ripple-effect"><i class="material-icons">delete_forever</i> Delete</a>
+	      <a id="delete-btn" class="mdl-button mdl-js-button mdl-js-ripple-effect"><i class="material-icons">delete_forever</i> Delete</a>
 	      <dialog class="mdl-dialog">
     <h4 class="mdl-dialog__title">Delete Article?</h4>
     <div class="mdl-dialog__content">
@@ -508,7 +508,41 @@ homepageRef.on('value', function(snapshot) {
             }
 		});
 	    
-		
+		// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("delete-btn");
+
+// Get the <span> element that closes the modal
+var close = document.getElementsByClassName("close")[0];
+	    
+	    // Get the <span> element that closes the modal
+var delete = document.getElementsByClassName("delete")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+close.onclick = function() {
+    modal.style.display = "none";
+	alert('cancelled');
+}
+
+// When the user clicks on <span> (x), close the modal
+delete.onclick = function() {
+    modal.style.display = "none";
+	alert('deleting\nNot done yet so it\'s not actually deleting');
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 			
 		
 	</script>
