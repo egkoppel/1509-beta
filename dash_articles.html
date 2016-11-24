@@ -277,8 +277,6 @@
 	  <button id="delete" class="mdl-button mdl-js-button mdl-button--raised delete">
   Delete
 </button>
-     <button type="button" class="mdl-button delete">Delete</button>
-      <button type="button" class="mdl-button delete">Cancel</button>
   </div>
 </div>
 	    <h2>Delete Article</h2>
@@ -526,6 +524,8 @@ var close = document.getElementById("close");
 	    // Get the <span> element that closes the modal
 var delete = document.getElementById("delete");
 
+	    modal.style.display = "block";
+	    
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
     modal.style.display = "block";
