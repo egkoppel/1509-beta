@@ -515,7 +515,19 @@ homepageRef.on('value', function(snapshot) {
 	    
 	    document.getElementById("delete-dialog").addEventListener("click", function(){
 		    modal.style.display = "none";
-			alert('deleting\nNot done yet so it\'s not actually deleting');
+		    var cat = document.getElementById("category-delete").innerHTML.replace(`   <i class="material-icons">keyboard_arrow_down</i>`,'');
+		    var title = document.getElementById("title-delete").innerHTML.replace(`   <i class="material-icons">keyboard_arrow_down</i>`,'');
+		    if (cat != "" && title != "") {
+			firebase.database().ref('entries/' + cat + "/" + title).remove()
+  .then(function() {
+    alert("Sucessfully removed article: " + title);
+  })
+  .catch(function(error) {
+    alert("There was a problem");
+  });
+		    } else {
+			alert("Please specify a title and/or title");    
+		    }
 	    });
 	    
 	    document.getElementById("delete-button").addEventListener("click", function(){
