@@ -261,7 +261,7 @@
     <section class="mdl-layout__tab-panel" id="delete">
       <div class="page-content"><!-- Your content goes here -->
 	      <!-- The Modal -->
-<div id="myModal" class="modal">
+<div id="modal" class="modal">
 	      <!-- Modal content -->
 <div class="modal-content">
   <div class="modal-header">
@@ -516,7 +516,7 @@ homepageRef.on('value', function(snapshot) {
 		});
 	    
 		// Get the modal
-var modal = document.getElementById('myModal');
+var modal = document.getElementById('modal');
 
 // Get the button that opens the modal
 var btn = document.getElementById("delete-btn");
@@ -527,7 +527,7 @@ var close = document.getElementById("close");
 	    // Get the <span> element that closes the modal
 var delete = document.getElementById("delete");
 
-	    modal.style.display = "block";
+	    modal.style.display = "none";
 	    
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
