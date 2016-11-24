@@ -521,41 +521,45 @@ homepageRef.on('value', function(snapshot) {
 	    document.getElementById("delete-button").addEventListener("click", function(){
 		    modal.style.display = "block";
 	    });
-		// Get the modal
-/*var modal = document.getElementById('modal');
-
-// Get the button that opens the modal
-var btn = document.getElementById("delete-btn");
-
-// Get the <span> element that closes the modal
-var close = document.getElementById("close");
 	    
-	    // Get the <span> element that closes the modal
-var delete = document.getElementById("delete");
+		function setCatEdit(name) {
+		   document.getElementById("category-delete").innerHTML = name.replace(/%20/g," ") + `   <i class="material-icons">keyboard_arrow_down</i>`;
+		    var database = firebase.database();
+      var homepageRef = database.ref('entries/' + name);
+homepageRef.on('value', function(snapshot) {
+	document.getElementById("titles-delete").innerHTML = "";
+	snapshot.forEach(function(childSnapshot) {
+    var childKey = childSnapshot.getKey();
+    var childData = childSnapshot.val();
+		var list = document.getElementById("titles-delete");
+		if (childSnapshot.getKey() != "summary") {
+  list.innerHTML += `<li class="mdl-menu__item" onclick="setTitleDelete('` + childSnapshot.getKey().replace(/%20/g," ") + `');return false;" >` + childSnapshot.getKey() + `</li>`
+		}
+		
+    // ...
+  });
+});
+	    }
+	   
+	 function setTitleDelete(name) {
+		   document.getElementById("title-delete").innerHTML = name + `   <i class="material-icons">keyboard_arrow_down</i>`;
+		    
+	    }   
 	    
-// When the user clicks the button, open the modal 
-/*btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-close.onclick = function() {
-    modal.style.display = "none";
-	alert('cancelled');
-}
-
-// When the user clicks on <span> (x), close the modal
-delete.onclick = function() {
-    modal.style.display = "none";
-	alert('deleting\nNot done yet so it\'s not actually deleting');
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}*/
+	var database = firebase.database();
+      var homepageRef = database.ref('entries');
+homepageRef.on('value', function(snapshot) {
+	document.getElementById("categories-delete").innerHTML = "";
+	snapshot.forEach(function(childSnapshot) {
+    var childKey = childSnapshot.getKey();
+    var childData = childSnapshot.val();
+		var list = document.getElementById("categories-delete");
+  list.innerHTML += `<li onclick="setCatDelete('` + childSnapshot.getKey() + `');return false;" class="mdl-menu__item">` + childSnapshot.getKey() + `</li>`
+		
+		
+    // ...
+  });
+});
 			
 		
 	</script>
