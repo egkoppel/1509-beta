@@ -273,10 +273,10 @@
     <p>Deleting the article will remove it remove it forever.</p>
   </div>
   <div class="modal-footer">
-	  <button id="close" class="mdl-button mdl-js-button mdl-button--raised cancel">
+	  <button id="close-dialog" class="mdl-button mdl-js-button mdl-button--raised cancel">
   Cancel
 </button>
-	  <button id="delete" class="mdl-button mdl-js-button mdl-button--raised delete">
+	  <button id="delete-dialog" class="mdl-button mdl-js-button mdl-button--raised delete">
   Delete
 </button>
   </div>
@@ -307,19 +307,8 @@
 					<li id="cat2" onclick="setCat('cat 2');return false;" class="mdl-menu__item">Article Category #2</li>
 					<li id="cat3" onclick="setCat('cat 3');return false;" class="mdl-menu__item">Article Category #3</li>-->
 				</ul>
-	      <a id="delete-btn" class="mdl-button mdl-js-button mdl-js-ripple-effect"><i class="material-icons">delete_forever</i> Delete</a>
-	      <dialog class="mdl-dialog">
-    <h4 class="mdl-dialog__title">Delete Article?</h4>
-    <div class="mdl-dialog__content">
-      <p>
-        Are you sure?
-      </p>
-    </div>
-    <div class="mdl-dialog__actions">
-      <button type="button" class="mdl-button delete">Delete</button>
-      <button type="button" class="mdl-button close">Cancel</button>
-    </div>
-	      </dialog>
+	      <a id="delete-button" class="mdl-button mdl-js-button mdl-js-ripple-effect"><i class="material-icons">delete_forever</i> Delete</a>
+	     
 	    </div>
     </section>
     
@@ -515,6 +504,20 @@ homepageRef.on('value', function(snapshot) {
             }
 		});
 	    document.getElementById("modal").style.display = "none";
+	    
+	    document.getElementById("close-dialog").addEventListener("click", function(){
+		    modal.style.display = "none";
+			alert('cancelled');
+	    });
+	    
+	    document.getElementById("delete-dialog").addEventListener("click", function(){
+		    modal.style.display = "none";
+			alert('deleting\nNot done yet so it\'s not actually deleting');
+	    });
+	    
+	    document.getElementById("delete-button").addEventListener("click", function(){
+		    modal.style.display = "block";
+	    });
 		// Get the modal
 /*var modal = document.getElementById('modal');
 
