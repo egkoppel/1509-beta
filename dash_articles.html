@@ -534,7 +534,7 @@ homepageRef.on('value', function(snapshot) {
 		    modal.style.display = "block";
 	    });
 	    
-		function setCatEdit(name) {
+		function setCatDelete(name) {
 		   document.getElementById("category-delete").innerHTML = name.replace(/%20/g," ") + `   <i class="material-icons">keyboard_arrow_down</i>`;
 		    var database = firebase.database();
       var homepageRef = database.ref('entries/' + name);
