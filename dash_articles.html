@@ -95,7 +95,7 @@
         </div>      <!-- Tabs -->
     <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
       <a href="#add" class="mdl-layout__tab is-active">Publish</a>
-      <a href="#edit" class="mdl-layout__tab">Edit</a>
+      <a href="#edit" class="mdl-layout__tab">Edit (Beta)</a>
       <a href="#delete" class="mdl-layout__tab">Delete</a>
     </div>
   </header>
@@ -325,7 +325,9 @@
     <script>
         //Markdown
         var converter = new showdown.Converter();
-        
+        var day = new Date();
+document.getElementById("date").value = day.getDate() + "/" + (day.getMonth() + 1) + "/" + day.getFullYear();
+	    
 	    //Test thing
 	    /*document.getElementById("cat1").removeAttribute("disabled");
 	    document.getElementById("cat1").setAttribute("disabled", "true");*/
