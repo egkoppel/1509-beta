@@ -162,23 +162,23 @@
 				</form>
 				<hr>
     <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="web">
-      <input type="radio" id="web" class="mdl-radio__button" name="options" value="web" checked>
+      <input type="radio" id="web" class="mdl-radio__button" name="options" value="web" checked onclick="web(); return false;>
       <span class="mdl-radio__label">A website</span>
     </label>
     <br>
     <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="local">
-      <input type="radio" id="local" class="mdl-radio__button" name="options" value="local">
+      <input type="radio" id="local" class="mdl-radio__button" name="options" value="local" onclick="local(); return false;>
       <span class="mdl-radio__label">Your computer (BETA)</span>
     </label>
 
-				<form action="#">
+				<form action="#" id="web-box">
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						<input class="mdl-textfield__input" type="text" id="image">
 						<label class="mdl-textfield__label" for="image">Image URL (at least 820 pixels in width)</label>
 					</div>
 				</form>
 				
-<input type="file" id="background" name="background" />	
+<input type="file" id="local-box" name="background" style="display:"none"/>	
 				
 				<hr>
 				<form action="#">
@@ -341,7 +341,14 @@
         var converter = new showdown.Converter();
         var day = new Date();
 document.getElementById("date").value = day.getDate() + "/" + (day.getMonth() + 1) + "/" + day.getFullYear();
-	    
+	  function web() {
+document.getElementById("web-box").style.display = "block";
+document.getElementById("local-box").style.display = "none";
+}
+function web() {
+document.getElementById("web-box").style.display = "none";
+document.getElementById("local-box").style.display = "block";
+}
 	    //Test thing
 	    /*document.getElementById("cat1").removeAttribute("disabled");
 	    document.getElementById("cat1").setAttribute("disabled", "true");*/
