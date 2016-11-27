@@ -76,6 +76,18 @@ body .demo-blog {
   position: relative;
   -webkit-overflow-scrolling: touch;
 }
+.demo-blog .author-mdl-card {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  min-height: 360px;
+}
 .demo-blog .mdl-card {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -87,6 +99,7 @@ body .demo-blog {
       -ms-flex-align: stretch;
           align-items: stretch;
   min-height: 360px;
+  min-width: 920px;
 }
 .demo-blog .mdl-card__title {
   padding: 16px;
@@ -203,12 +216,9 @@ body .demo-blog {
 .demo-blog .welcome .mdl-card__media {
   background-image: url('images/founders-court.jpg');
 }
-/*.demo-blog .amazing .mdl-card__media {
-  background-image: url('images/20161111-trump.jpg');
+.demo-blog .welcome .mdl-card {
+  min-width: 600px
 }
-.demo-blog .20161111-trump .mdl-card__media {
-  background-image: url('images/20161111-trump.jpg');
-}*/
 .demo-blog .something-else .mdl-card__media {
   display: -webkit-flex;
   display: -ms-flexbox;

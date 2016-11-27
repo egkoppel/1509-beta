@@ -66,7 +66,7 @@
     <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
       <main class="mdl-layout__content">
         <div class="demo-blog__posts mdl-grid">
-          <div class="mdl-card welcome mdl-cell mdl-cell--8-col">
+          <div class="welcome-mdl-card welcome mdl-cell mdl-cell--8-col">
             <div class="mdl-card__media mdl-color-text--grey-50">
               <h3>Welcome to 1509 Online!</h3>
             </div>
@@ -75,11 +75,11 @@
               	<img width="45" src="images/timothy-langer-circle.png">
               </div>
               <div>
-                This is the home of the St Paul's Juniors boys' magazine 1509. Here you can view past 1509 issues and articles, videos and audio files that are exclusive to this website! You can also submit articles you have written to be published here or on the magazine. Finally, there will be online competitions and surveys for you to complete and take part in. Thank you for all your contributions and have a look at the amazing features of the 1509 website!
+                This is the home of the St Paul's Juniors boys' magazine 1509. Here you can view past 1509 issues, articles and videos, you can participate in competitions and surveys and submit articles to be published here or in the magazine.
               </div>
             </div>
           </div>
-          <div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
+          <div class="author-mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
             <div class="mdl-card__media mdl-color--white mdl-color-text--grey-600">
               <img src="images/sps-logo.png">
               The SPJ Pupils' magazine
@@ -104,56 +104,25 @@
                       <h3>JavaScript disabled</h3>
                   </div>
                   <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
-                      1509 Online requires JavaScript to be enabled. Please enable it and reload the page.
+                      1509 Online needs JavaScript to load articles. Please enable or talk to your computer administrator.
                   </div>
                   <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-                      <div class="minilogo">
-                          <img width="45" src="images/sps-logo.png">
-                              </div>
-                      SYSTEM
+						<div class="minilogo">
+							<img width="45" src="images/sps-logo.png">
+						</div>
+                      1509 Editors
                       <div>
                       </div>
                   </div>
               </div>
           </noscript>
-<div id="entries">
-          <!--<div class="mdl-card 20161111-trump mdl-cell mdl-cell--12-col">
-            <div class="mdl-card__media mdl-color-text--grey-50">
-              <h3><a href="20161111-trump.html">Donald Trump - yay or nay?</a></h3>
-            </div>
-            <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-              Donald Trump has been elected president for the next four years at the very least. What next? Joe Leventis from U3F explains.
-            </div>
-            <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-              <div class="minilogo">
-              	<img width="45" src="images/timothy-langer-circle.png">
-              </div>
-              <div>
-                <strong>Timothy Langer U3H - Web Editor</strong>
-                <span>6/11/16</span>
-              </div>
-            </div>
-          </div>
--->          
-</div>
+		  <div id="entries">
+			<!--ENTRIES ARE POPULATED HERE-->
+		  </div>
           <nav class="demo-nav mdl-cell mdl-cell--12-col">
             <div class="section-spacer"></div>
           </nav>
         </div>
-	      
-        <!-- <footer class="mdl-mini-footer">
-
-          Use The drawer contact and share function instead, this is in case we wish to revert
-
-	  <div class="mdl-mini-footer--left-section">
-            <button class="mdl-mini-footer--social-btn social-btn__share">
-              <i class="material-icons" role="presentation" id="tt2">share</i>
-              <span class="visuallyhidden">share</span>
-              <div class="mdl-tooltip" for="tt2">Share</div>
-            </button>
-          </div> 
-		
-        </footer>-->
       </main>
       <div class="mdl-layout__obfuscator"></div>
     </div>
@@ -173,9 +142,6 @@
       });
     });
   </script>
-  <a href="sign-in.html" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--white">ADD</a>
-  
-	  
     <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
@@ -240,7 +206,7 @@ homepageRef.on('value', function(snapshot) {
             </div>
             <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
               <div class="minilogo">
-              	<img width="45" src="images/timothy-langer-circle.png">
+              	<img width="45" src="images/default-author.png">
               </div>
               <div>
                 <strong>` + user + `</strong>
@@ -272,5 +238,6 @@ homepageRef.on('value', function(snapshot) {
       });
     });
   </script>
-  <a href="https://github.com/1509-online/1509-online.github.io" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--white">EDIT</a>
+  <!-- TEXT BUTTON <a href="https://github.com/1509-online/1509-online.github.io" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--white">EDIT</a> -->
+  <a href="https://github.com/1509-online/1509-online.github.io" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"><i class="material-icons">create</i></a>
 </html>
